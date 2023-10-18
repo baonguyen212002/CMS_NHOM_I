@@ -152,7 +152,7 @@ class Walker_Category extends Walker {
 		}
 
 		$link = sprintf(
-			'<a%s>%s</a>',
+			'<a%s><i class="fa fa-angle-double-right"></i>%s</a>',
 			$attributes,
 			$cat_name
 		);
