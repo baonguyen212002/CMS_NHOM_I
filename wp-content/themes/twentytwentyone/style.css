@@ -3942,9 +3942,39 @@ table.wp-calendar-table caption {
 }
 
 .singular .entry-header {
-	border-bottom: 3px solid var(--global--color-border);
+	/* border-bottom: 3px solid var(--global--color-border); */
+	/* padding-bottom: calc(2 * var(--global--spacing-vertical)); */
+	/* margin-bottom: calc(3 * var(--global--spacing-vertical)); */
+}
+
+.singular .linebinh {
+	border-bottom: 1px solid #cecece;
+	position: relative;
+	/* border-bottom: 3px solid var(--global--color-border); */
 	padding-bottom: calc(2 * var(--global--spacing-vertical));
-	margin-bottom: calc(3 * var(--global--spacing-vertical));
+	/* margin-bottom: calc(3 * var(--global--spacing-vertical)); */
+}
+.singular .linebinh:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50px;
+    border-width: 12px 12px 0;
+    border-style: solid;
+    border-color: #cecece transparent;
+    display: block;
+    width: 0;
+}
+.singular .linebinh:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 51px;
+    border-width: 11px 11px 0;
+    border-style: solid;
+    border-color: #f5f5f5  transparent;
+    display: block;
+    width: 0;
 }
 
 .home .entry-header {
@@ -6061,4 +6091,49 @@ a{
 }
 #footer ul.wp-block-categories-list {
     margin: -8px 0 0 0;
+}
+/* Binh css */
+.titlebinh {
+	font-family: 'Open Sans Condensed', sans-serif !important;
+	font-size: 2.1em !important;
+	font-weight: bold !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	/* position: relative; */
+}
+
+.binhdraw{
+	left: -5%;
+	top : 0%;
+	position: absolute;
+	background: #f5ce31;
+	padding: 15px 0px;
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+}
+.calender-binh {
+	display: inline-block;
+	color: black;
+	padding-left: 20px;
+	font-family: 'Prata', serif !important;
+	font-size: 1.0em !important;
+	position: relative;
+}
+.day-binh {
+	display: block;
+	border-bottom: solid 0.5px black;
+}
+.month-binh {
+	display: block;
+}
+.year-binh {
+	font-family: 'Prata', serif !important;
+	font-size: 1.0em !important;
+	color: black;
+	display: inline-block;
+	vertical-align: 10px;
+	position: absolute;
+	top: 32%;
+	left: 50%;
 }
