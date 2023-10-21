@@ -120,6 +120,7 @@ function render_block_core_latest_posts( $attributes ) {
 		}
 
 		/* -- Module 10 -- */
+		
 		$post_day = get_the_date('d', $post->ID );
 		$post_month = get_the_date('m', $post->ID );
 		$post_year = get_the_date('y', $post->ID );
@@ -133,6 +134,7 @@ function render_block_core_latest_posts( $attributes ) {
 			$title
 		);
 		$_SESSION['recent-posts'] = $list_items_markup;
+
 		/* -- Module 10 -- */
 		
 		if ( isset( $attributes['displayAuthor'] ) && $attributes['displayAuthor'] ) {

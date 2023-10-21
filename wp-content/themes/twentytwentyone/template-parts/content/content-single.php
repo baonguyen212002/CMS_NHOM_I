@@ -58,6 +58,7 @@ session_start();
 			<div class="col-4">
 				<div class="color-recent-posts">
 					<ul class="wp-block-latest-posts__list wp-block-latest-posts">
+						
 						<?php
 								echo $_SESSION['recent-posts'];
 							?>
