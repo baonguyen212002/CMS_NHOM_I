@@ -260,7 +260,7 @@ function get_comment_author_link( $comment_id = 0 ) {
 		$rel = ! empty( $rel ) ? sprintf( ' rel="%s"', $rel ) : '';
 
 		$comment_author_link = sprintf(
-			'<a href="%1$s" class="url"%2$s>%3$s</a>',
+			'<a href="%1$s" class="url heading-name-user"%2$s>%3$s</a>',
 			$comment_author_url,
 			$rel,
 			$comment_author
