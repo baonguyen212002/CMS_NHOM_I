@@ -23,6 +23,21 @@ session_start();
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
 
+	<style>
+		body{
+			/* background-color: red; */
+			background: url(http://fit.tdc.edu.vn/addons/default/themes/bootstrapThree/img/bg_pattern.png) repeat;
+		}
+		.h7
+		{
+			font-size: 0.9rem
+		}
+	</style>
+	<?php 
+		$post_day = get_the_date('d', $post->ID );
+		$post_month = get_the_date('m', $post->ID );
+		$post_year = get_the_date('y', $post->ID );
+	?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="container">
 		<div class="row">
@@ -31,8 +46,20 @@ session_start();
 					laudantium odio repudiandae aut corporis laboriosam?</p>
 			</div>
 			<div class="col-6">
-				<header class="entry-header alignwide">
-					<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+				<header class="entry-header alignwide linebinh">
+				<div class="row" style="margin-left:5px">
+				<?php the_title( '<h1 class="col-md-10 col-xs-9 entry-title titlebinh">', '</h1>' ); ?>
+					<div class="col-md-2 col-xs-3 ">
+						<div class="binhdraw">
+							<div class="calender-binh">
+								<div class="day-binh"><?php echo $post_day ?></div>
+								<div class="month-binh"><?php echo $post_month ?></div>
+							</div>
+							<div class="year-binh">'<?php echo $post_year ?></div>
+						</div>
+					</div>
+					
+				</div>
 					<?php twenty_twenty_one_post_thumbnail(); ?>
 				</header><!-- .entry-header -->
 
