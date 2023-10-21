@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * Server-side rendering of the `core/latest-posts` block.
  *
@@ -118,12 +119,22 @@ function render_block_core_latest_posts( $attributes ) {
 			);
 		}
 
-		$list_items_markup .= sprintf(
-			'<a class="wp-block-latest-posts__post-title" href="%1$s">%2$s</a>',
+		/* -- Module 10 -- */
+		$post_day = get_the_date('d', $post->ID );
+		$post_month = get_the_date('m', $post->ID );
+		$post_year = get_the_date('y', $post->ID );
+		$list_items_markup .= '<div class="calender">
+		<div class="day">'.$post_day.'</div>
+		<div class="month">'.$post_month.'</div>
+	</div>
+	<div class="year">'.$post_year.'</div>'. sprintf(
+			'<div class="year"><a class="wp-block-latest-posts__post-title recent-post" href="%1$s">%2$s</a></div>',
 			esc_url( $post_link ),
 			$title
 		);
-
+		$_SESSION['recent-posts'] = $list_items_markup;
+		/* -- Module 10 -- */
+		
 		if ( isset( $attributes['displayAuthor'] ) && $attributes['displayAuthor'] ) {
 			$author_display_name = get_the_author_meta( 'display_name', $post->post_author );
 
