@@ -698,7 +698,7 @@ template {
 .default-max-width {
 	max-width: var(--responsive--aligndefault-width);
 	margin-left: auto;
-	margin-right: auto;
+	/* margin-right: auto; */
 }
 
 .widget-area,
@@ -924,12 +924,13 @@ template {
 	margin-top: 0;
 }
 
-.entry-header > *:last-child,
+/*.entry-header > *:last-child,*/
 .post-thumbnail > *:last-child,
 .page-content > *:last-child,
 .comment-content > *:last-child,
 .widget > *:last-child {
 	margin-bottom: 0;
+	
 }
 
 /*
@@ -1014,13 +1015,13 @@ html {
 	box-sizing: inherit;
 }
 
-body {
+/* body {
 	font-size: var(--global--font-size-base);
 	font-weight: normal;
 	color: var(--global--color-primary);
 	text-align: left;
 	background-color: var(--global--color-background);
-}
+} */
 
 button {
 	cursor: pointer;
@@ -1674,7 +1675,7 @@ input[type=reset],
 
 .site .button:not(:hover):not(:active):not(.has-text-color),
 button:not(:hover):not(:active):not(.has-text-color),
-input[type=submit]:not(:hover):not(:active):not(.has-text-color),
+/* input[type=submit]:not(:hover):not(:active):not(.has-text-color), */
 input[type=reset]:not(:hover):not(:active):not(.has-text-color),
 .wp-block-search .wp-block-search__button:not(:hover):not(:active):not(.has-text-color),
 .wp-block-button .wp-block-button__link:not(:hover):not(:active):not(.has-text-color),
@@ -1704,7 +1705,7 @@ input[type=reset]:not(:hover):not(:active):not(.has-text-color),
 
 .site .button:not(:hover):not(:active):not(.has-background),
 button:not(:hover):not(:active):not(.has-background),
-input[type=submit]:not(:hover):not(:active):not(.has-background),
+/* input[type=submit]:not(:hover):not(:active):not(.has-background), */
 input[type=reset]:not(:hover):not(:active):not(.has-background),
 .wp-block-search .wp-block-search__button:not(:hover):not(:active):not(.has-background),
 .wp-block-button .wp-block-button__link:not(:hover):not(:active):not(.has-background),
@@ -4009,13 +4010,18 @@ table.wp-calendar-table caption {
 	margin-left: 0;
 }
 
-.entry-title {
-	color: var(--entry-header--color);
+ .entry-header.entry-title {
+	/* color: var(--entry-header--color); 
 	font-size: var(--entry-header--font-size);
 	letter-spacing: var(--heading--letter-spacing-h2);
 	line-height: var(--heading--line-height-h2);
-	overflow-wrap: break-word;
+	overflow-wrap: break-word;*/
+	text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+	margin: 10px 0 !important;
 }
+
 
 .entry-title a {
 	/* color: var(--entry-header--color-link); */
@@ -4053,6 +4059,8 @@ h1.entry-title {
 
 .entry-content p {
 	word-wrap: break-word;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12.6px;
 }
 
 .entry-content > iframe[style] {
@@ -4089,7 +4097,7 @@ h1.entry-title {
 	margin-top: var(--global--spacing-vertical);
 	padding-top: var(--global--spacing-unit);
 	padding-bottom: calc(3 * var(--global--spacing-vertical));
-	border-bottom: var(--separator--height) solid var(--separator--border-color);
+	 /* border-bottom: var(--separator--height) solid var(--separator--border-color);  */
 }
 
 body:not(.single) .site-main > article:last-of-type .entry-footer {
@@ -4200,6 +4208,15 @@ body:not(.single) .site-main > article:last-of-type .entry-footer {
 h1.page-title,
 h2.page-title {
 	font-weight: var(--heading--font-weight-page-title);
+	font-size: 33px;
+    font-weight: bold;
+    color: red;
+    margin: auto;
+    width: 20%;
+}
+.page-header{
+	    margin-bottom: 0px;
+    padding-bottom: 0px;
 }
 
 h1.page-title {
@@ -4207,7 +4224,7 @@ h1.page-title {
 }
 
 .page-header {
-	border-bottom: 3px solid var(--global--color-border);
+	/* border-bottom: 3px solid var(--global--color-border); */
 	padding-bottom: calc(2 * var(--global--spacing-vertical));
 }
 
@@ -5938,6 +5955,7 @@ section .section-title {
 }
 #footer {
     background: #007b5e !important;
+	padding-bottom: 0px !important;
 }
 #footer h5{
 	padding-left: 10px;
@@ -6012,6 +6030,111 @@ a{
 }
 #footer ul.wp-block-categories-list {
     margin: -8px 0 0 0;
+}
+
+/* **********content*********** */
+.entry-header h2 a{	
+		text-transform: uppercase;
+		font-family: 'Open Sans Condensed', sans-serif;
+		font-weight: bold;
+		color: #428bca;
+		font-size: 18px !important;
+}
+.entry-header h2{
+	margin: 10px 0 !important;
+}
+.entry-title a:hover {
+    color: #2A6496; /* Đổi màu chữ thành đỏ khi rê chuột vào */
+}
+.shortdesc {
+    border-left: 1px solid #666 ;
+	padding: 0 30px 0 15px !important;
+	max-width: 33%;
+	position: relative;
+    left: 189px;
+}
+body .posted-date {
+    font-family: 'Prata', serif !important;
+    font-size: 3.1em;
+    line-height: 1em;
+    margin-left: 15px;
+}
+.posted-on > .posted-month{
+	text-transform: uppercase;
+font-size: 0.9em;
+margin-left: 15px;
+}
+.entry-content p{
+	margin: 0 0 10px !important;
+	padding-right: 200px;
+}
+.row .col-md-3{
+	padding-left: 273px !important;
+    padding-top: 9px;
+}
+.category-uncategorized{
+	margin-left: 10px;
+}
+
+.topnewstime{
+	position: relative;
+    left: 190px;
+}
+/* .page-content {
+    position: relative;
+    right: 467px;
+} */
+/***************search************/
+/* .form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+} */
+.search-submit{
+	color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+	margin-left: 0px !important;
+      margin-top: 0px !important;
+	  border-radius: 10px !important;
+}
+
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.search-submit:hover {
+background-color:  #28a745 !important; /* Đổi màu chữ thành đỏ khi rê chuột vào */
+   
+}
+.search-field{
+	margin: 0px !important;
+	border: 1px  solid #DFDFDF !important;
+	border-radius: 10px !important;
+}
+.fas {
+    font-weight: 600;
+    font-size: 33px;
+    padding-top: 13px;
+}
+.search-form{
+	border: 1px solid #DFDFDF;
+	padding: 10px;
+	border-radius: 10px;
+}
+.page-content{
+	margin-left: auto;
+    margin-right: auto;
+	margin-top: 0px !important;
+}
+.page-header{
+	margin-bottom: 0px !important;
+	padding-bottom: 10px;
 }
 
 /* Binh css */
@@ -6206,6 +6329,7 @@ li {
 
 /* --- /Module 14 --- */
 
+
 /* Search_Result */
 .list_new_view {
     margin-bottom: 15px;
@@ -6259,3 +6383,4 @@ li {
 .shortdesc {
     padding-right: 30px;
 }}
+

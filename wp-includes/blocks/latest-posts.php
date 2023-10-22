@@ -72,6 +72,7 @@ function render_block_core_latest_posts( $attributes ) {
 	}
 
 	$list_items_markup = '';
+	$list_items_minh = '';
 
 	foreach ( $recent_posts as $post ) {
 		$post_link = esc_url( get_permalink( $post ) );
@@ -82,6 +83,7 @@ function render_block_core_latest_posts( $attributes ) {
 		}
 
 		$list_items_markup .= '<li>';
+		$list_items_minh .= '<li>';
 
 		if ( $attributes['displayFeaturedImage'] && has_post_thumbnail( $post ) ) {
 			$image_style = '';
@@ -117,14 +119,19 @@ function render_block_core_latest_posts( $attributes ) {
 				esc_attr( $image_classes ),
 				$featured_image
 			);
+			$list_items_minh .= sprintf(
+				'<div class="%1$s">%2$s</div>',
+				esc_attr( $image_classes ),
+				$featured_image
+			);
 		}
 
 		/* -- Module 10 -- */
-		
+		// class="wp-block-categories-list list-unstyled quick-links wp-block-categories"
 		$post_day = get_the_date('d', $post->ID );
 		$post_month = get_the_date('m', $post->ID );
 		$post_year = get_the_date('y', $post->ID );
-		$list_items_markup .= '<div class="calender">
+		$list_items_minh .= '<div class="calender">
 		<div class="day">'.$post_day.'</div>
 		<div class="month">'.$post_month.'</div>
 	</div>
@@ -133,7 +140,12 @@ function render_block_core_latest_posts( $attributes ) {
 			esc_url( $post_link ),
 			$title
 		);
-		$_SESSION['recent-posts'] = $list_items_markup;
+		$list_items_markup .=sprintf(
+			'<a href="%1$s"><i class="fa fa-angle-double-right"></i>%2$s</a>',
+			esc_url( $post_link ),
+			$title
+		);
+		$_SESSION['recent-posts'] = $list_items_minh;
 
 		/* -- Module 10 -- */
 		
@@ -194,7 +206,7 @@ function render_block_core_latest_posts( $attributes ) {
 
 	remove_filter( 'excerpt_length', 'block_core_latest_posts_get_excerpt_length', 20 );
 
-	$classes = array( 'wp-block-latest-posts__list' );
+	$classes = array( 'wp-block-categories-list list-unstyled quick-links wp-block-categories' );
 	if ( isset( $attributes['postLayout'] ) && 'grid' === $attributes['postLayout'] ) {
 		$classes[] = 'is-grid';
 	}
