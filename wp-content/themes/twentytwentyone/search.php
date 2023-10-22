@@ -12,7 +12,6 @@
 get_header();
 
 	?>
-
 	<style>
 body {
     background: url(http://fit.tdc.edu.vn/addons/default/themes/bootstrapThree/img/bg_pattern.png) repeat 	;
@@ -20,7 +19,6 @@ body {
 }
 
 	</style>
-
 	<div class="row">
 		<div class="col-md-3">
 			<h5>Module 13</h5>
