@@ -1154,8 +1154,8 @@ input[type=datetime],
 input[type=datetime-local],
 input[type=color],
 .site textarea {
-	border: var(--form--border-width) solid var(--form--border-color);
-	border-radius: var(--form--border-radius);
+	/* border: var(--form--border-width) solid var(--form--border-color); */
+	/* border-radius: var(--form--border-radius); */
 	color: var(--form--color-text);
 	line-height: var(--global--line-height-body);
 	padding: var(--form--spacing-unit);
@@ -1709,7 +1709,7 @@ input[type=reset]:not(:hover):not(:active):not(.has-background),
 .wp-block-search .wp-block-search__button:not(:hover):not(:active):not(.has-background),
 .wp-block-button .wp-block-button__link:not(:hover):not(:active):not(.has-background),
 .wp-block-file a.wp-block-file__button:not(:hover):not(:active):not(.has-background) {
-	background-color: var(--global--color-primary);
+	/* background-color: var(--global--color-primary); */
 }
 
 .has-background .site .button:not(:hover):not(:active):not(.has-background),
@@ -6015,6 +6015,9 @@ a{
 }
 
 /* Binh css */
+.nav-link{
+	margin-bottom: -1px;
+}
 .titlebinh {
 	font-family: 'Open Sans Condensed', sans-serif !important;
 	font-size: 2.1em !important;

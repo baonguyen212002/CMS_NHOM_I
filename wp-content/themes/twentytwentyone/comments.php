@@ -24,8 +24,12 @@ if (post_password_required()) {
 $twenty_twenty_one_comment_count = get_comments_number();
 ?>
 
-<div id="comments"
-	class="comments-area default-max-width <?php echo get_option('show_avatars') ? 'show-avatars' : ''; ?>">
+<div class="container">
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+		<div id="comments"
+	class="comments-area <?php echo get_option('show_avatars') ? 'show-avatars' : ''; ?>">
 
 	<?php
 	if (have_comments()):
@@ -91,11 +95,14 @@ $twenty_twenty_one_comment_count = get_comments_number();
 	<?php
 	comment_form(
 		array(
-			'title_reply' => esc_html__('Leave a comment', 'twentytwentyone'),
+			'title_reply' => esc_html__('', 'twentytwentyone'),
 			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
 			'title_reply_after' => '</h2>',
 		)
 	);
 	?>
-
-</div><!-- #comments -->
+	</div><!-- #comments -->
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+</div>
