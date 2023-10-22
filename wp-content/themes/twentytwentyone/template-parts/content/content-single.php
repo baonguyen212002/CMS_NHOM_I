@@ -87,6 +87,7 @@ session_start();
 					<ul class="wp-block-latest-posts__list wp-block-latest-posts">
 						
 						<?php
+							if(isset($_SESSION['recent-posts']))
 								echo $_SESSION['recent-posts'];
 							?>
 					</ul>

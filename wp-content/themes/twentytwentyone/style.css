@@ -6023,7 +6023,6 @@ a{
 	padding: 0 !important;
 	/* position: relative; */
 }
-
 .binhdraw{
 	left: -5%;
 	top : 0%;
@@ -6060,6 +6059,20 @@ a{
 	left: 50%;
 }
 
+.yearnav {
+	font-family: 'Prata', serif !important;
+	font-size: 1.0em !important;
+	color: black;
+	display: inline-block;
+	vertical-align: 10px;
+	position: absolute;
+	top: 25%;
+	left: 115%;
+}
+.listnav{
+	background-color: white;
+}
+.indent{ padding-left: 1.8em }
 
 /* -- Module 10 -- */
 .color-recent-posts {
