@@ -16,16 +16,38 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
+
 			</main><!-- #main -->
 		</div><!-- #primary -->
 	</div><!-- #content -->
-
+	<section id="footer">
 	<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
 
-	<!-- Footer -->
+	<footer id="colophon" class="site-footer">
+
+		<?php if ( has_nav_menu( 'footer' ) ) : ?>
+			<nav aria-label="<?php esc_attr_e( 'Secondary menu', 'twentytwentyone' ); ?>" class="footer-navigation">
+				<ul class="footer-navigation-wrapper">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'footer',
+							'items_wrap'     => '%3$s',
+							'container'      => false,
+							'depth'          => 1,
+							'link_before'    => '<span>',
+							'link_after'     => '</span>',
+							'fallback_cb'    => false,
+						)
+					);
+					?>
+				</ul><!-- .footer-navigation-wrapper -->
+			</nav><!-- .footer-navigation -->
+		<?php endif; ?>
+		<!-- Footer -->
 	<section id="footer">
 		<div class="container">
-			
+		
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
 					<ul class="list-unstyled list-inline social text-center">
@@ -48,7 +70,8 @@
 		</div>
 	</section>
 	<!-- ./Footer -->
-
+	</footer><!-- #colophon -->
+	</section>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

@@ -13,13 +13,15 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+<div class=row>
+<div class="col-md-3 col-xs-3 topnewstime entry-footer default-max-width">
+		<?php twenty_twenty_one_entry_meta_footer(); ?>
+</div><!-- .entry-footer -->
+<div class="col-md-9 col-xs-9 shortdesc">
 	<?php get_template_part( 'template-parts/header/excerpt-header', get_post_format() ); ?>
-
 	<div class="entry-content">
 		<?php get_template_part( 'template-parts/excerpt/excerpt', get_post_format() ); ?>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer default-max-width">
-		<?php twenty_twenty_one_entry_meta_footer(); ?>
-	</footer><!-- .entry-footer -->
+</div>
+</div>
 </article><!-- #post-${ID} -->

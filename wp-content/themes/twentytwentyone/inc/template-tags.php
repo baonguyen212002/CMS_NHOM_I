@@ -16,20 +16,35 @@ if ( ! function_exists( 'twenty_twenty_one_posted_on' ) ) {
 	 * @return void
 	 */
 	function twenty_twenty_one_posted_on() {
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		// $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
-		$time_string = sprintf(
-			$time_string,
-			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date() )
-		);
-		echo '<span class="posted-on">';
-		printf(
-			/* translators: %s: Publish date. */
-			esc_html__( 'Published %s', 'twentytwentyone' ),
-			$time_string // phpcs:ignore WordPress.Security.EscapeOutput
-		);
-		echo '</span>';
+		// $time_string = sprintf(
+		// 	$time_string,
+		// 	esc_attr( get_the_date( DATE_W3C ) ),
+		// 	esc_html( get_the_date('d m') )//định dạng ngày tháng số 0 phía trưocws
+		// );
+		// echo '<span class="posted-on">';
+		// printf(
+		// 	/* translators: %s: Publish date. */
+		// 	esc_html__( ' %s', 'twentytwentyone' ),
+		// 	$time_string // phpcs:ignore WordPress.Security.EscapeOutput
+		// );
+		// echo '</span>';
+		$date = get_the_date('d'); // Lấy ngày
+    $month = get_the_date('m'); // Lấy tháng
+
+    // Định dạng ngày và tháng
+    $date_output = sprintf('<span class="posted-date">%s</span><br>', esc_html($date));
+    $month_output = sprintf('<span class="posted-month">THÁNG %s</span>', esc_html($month));
+
+    echo '<span class="posted-on">';
+    printf(
+        /* translators: %1$s: Ngày, %2$s: Tháng */
+        esc_html__( '%1$s  %2$s', 'twentytwentyone' ),
+        $date_output,
+        $month_output
+    );
+    echo '</span>';
 	}
 }
 
@@ -86,39 +101,39 @@ if ( ! function_exists( 'twenty_twenty_one_entry_meta_footer' ) ) {
 			twenty_twenty_one_posted_on();
 
 			// Edit post link.
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Post title. Only visible to screen readers. */
-					esc_html__( 'Edit %s', 'twentytwentyone' ),
-					'<span class="screen-reader-text">' . get_the_title() . '</span>'
-				),
-				'<span class="edit-link">',
-				'</span><br>'
-			);
+			// edit_post_link(
+			// 	sprintf(
+			// 		/* translators: %s: Post title. Only visible to screen readers. */
+			// 		esc_html__( 'Edit %s', 'twentytwentyone' ),
+			// 		'<span class="screen-reader-text">' . get_the_title() . '</span>'
+			// 	),
+			// 	'<span class="edit-link">',
+			// 	'</span><br>'
+			// );
 
-			if ( has_category() || has_tag() ) {
+			// if ( has_category() || has_tag() ) {
 
-				echo '<div class="post-taxonomies">';
+			// 	echo '<div class="post-taxonomies">';
 
-				$categories_list = get_the_category_list( wp_get_list_item_separator() );
-				if ( $categories_list ) {
-					printf(
-						/* translators: %s: List of categories. */
-						'<span class="cat-links">' . esc_html__( 'Categorized as %s', 'twentytwentyone' ) . ' </span>',
-						$categories_list // phpcs:ignore WordPress.Security.EscapeOutput
-					);
-				}
+			// 	$categories_list = get_the_category_list( wp_get_list_item_separator() );
+			// 	if ( $categories_list ) {
+			// 		printf(
+			// 			/* translators: %s: List of categories. */
+			// 			'<span class="cat-links">' . esc_html__( 'Categorized as %s', 'twentytwentyone' ) . ' </span>',
+			// 			$categories_list // phpcs:ignore WordPress.Security.EscapeOutput
+			// 		);
+			// 	}
 
-				$tags_list = get_the_tag_list( '', wp_get_list_item_separator() );
-				if ( $tags_list ) {
-					printf(
-						/* translators: %s: List of tags. */
-						'<span class="tags-links">' . esc_html__( 'Tagged %s', 'twentytwentyone' ) . '</span>',
-						$tags_list // phpcs:ignore WordPress.Security.EscapeOutput
-					);
-				}
-				echo '</div>';
-			}
+			// 	$tags_list = get_the_tag_list( '', wp_get_list_item_separator() );
+			// 	if ( $tags_list ) {
+			// 		printf(
+			// 			/* translators: %s: List of tags. */
+			// 			'<span class="tags-links">' . esc_html__( 'Tagged %s', 'twentytwentyone' ) . '</span>',
+			// 			$tags_list // phpcs:ignore WordPress.Security.EscapeOutput
+			// 		);
+			// 	}
+			// 	echo '</div>';
+			// }
 		} else {
 
 			echo '<div class="posted-by">';
