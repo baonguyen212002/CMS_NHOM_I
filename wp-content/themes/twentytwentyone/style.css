@@ -839,7 +839,7 @@ template {
 .entry-content,
 .entry-footer,
 .author-bio {
-	margin-top: var(--global--spacing-vertical);
+	/* margin-top: var(--global--spacing-vertical); */
 	margin-right: auto;
 	margin-bottom: var(--global--spacing-vertical);
 	margin-left: auto;
@@ -4018,7 +4018,7 @@ table.wp-calendar-table caption {
 }
 
 .entry-title a {
-	color: var(--entry-header--color-link);
+	/* color: var(--entry-header--color-link); */
 	text-underline-offset: 0.15em;
 }
 
@@ -6206,3 +6206,56 @@ li {
 
 /* --- /Module 14 --- */
 
+/* Search_Result */
+.list_new_view {
+    margin-bottom: 15px;
+}
+
+.shortdesc {
+    border-left: 1px solid #666;
+}
+
+.top_news_block_desc h4 {
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+}
+
+.top_news_block_desc .topnewstime {
+    margin-top: 12px;
+    text-align: center;
+    padding-left: 0;
+}
+
+.top_news_block_desc {
+    font-size: 0.9em;
+    padding: 15px;
+}
+
+.topnewstime > .topnewsdate {
+    font-family: 'Prata', serif;
+    font-size: 3.1em;
+    line-height: 1em;
+    /* margin-left: 15px; */
+}
+
+.top_news_block, .list_new_view {
+    background: #fff;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+}
+
+@media (min-width: 1200px){
+.list_new_view .top_news_block_desc .topnewstime > .topnewsdate, .list_new_view .top_news_block_desc .topnewstime > .topnewsmonth {
+    margin-left: 0;
+}}
+
+@media (min-width: 992px){
+.row {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+}}
+
+@media (min-width: 768px){
+.shortdesc {
+    padding-right: 30px;
+}}
