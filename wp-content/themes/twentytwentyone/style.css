@@ -6140,6 +6140,41 @@ li {
 
 /* -- /Module 10 -- */
 
+/* --- Module 13 --- */
+
+.content-nav {
+	display: block;
+	width: 600px;
+    height: 300px;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.post-title-nav {
+	text-align: left;
+	font-size: 22px;
+}
+
+hr {
+    border-top: 5px solid  #999eab;
+	width: 150px;
+    margin: 0;
+	
+}
+
+.image-nav {
+	display: inline-block;
+	width: 300px;
+	height: 200px;
+}
+
+.text-content {
+	text-align: left !important;
+	box-sizing: border-box;
+}
+
+/* --- Module 13 --- */
+
 /* --- Module 14 --- */
 /* CSS Test begin */
 .comment-box {

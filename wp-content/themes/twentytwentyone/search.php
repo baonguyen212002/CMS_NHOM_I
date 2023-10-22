@@ -15,9 +15,14 @@ if (have_posts()) {
 	?>
 	<div class="row">
 		<div class="col-md-3">
-			<h5>Module 13</h5>
-			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo dolorem, eaque natus at quasi delectus velit
-				laudantium deleniti libero necessitatibus?</p>
+			<div class="category-navigation">
+				<div class="nav-previous">
+					<?php previous_posts_link('Previous'); ?>
+				</div>
+				<div class="nav-next">
+					<?php next_posts_link('Next'); ?>
+				</div>
+			</div>
 		</div>
 		<div class="col-md-6">
 			<div class="container">
