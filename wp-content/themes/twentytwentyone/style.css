@@ -1155,8 +1155,8 @@ input[type=datetime],
 input[type=datetime-local],
 input[type=color],
 .site textarea {
-	border: var(--form--border-width) solid var(--form--border-color);
-	border-radius: var(--form--border-radius);
+	/* border: var(--form--border-width) solid var(--form--border-color); */
+	/* border-radius: var(--form--border-radius); */
 	color: var(--form--color-text);
 	line-height: var(--global--line-height-body);
 	padding: var(--form--spacing-unit);
@@ -1710,7 +1710,7 @@ input[type=reset]:not(:hover):not(:active):not(.has-background),
 .wp-block-search .wp-block-search__button:not(:hover):not(:active):not(.has-background),
 .wp-block-button .wp-block-button__link:not(:hover):not(:active):not(.has-background),
 .wp-block-file a.wp-block-file__button:not(:hover):not(:active):not(.has-background) {
-	background-color: var(--global--color-primary);
+	/* background-color: var(--global--color-primary); */
 }
 
 .has-background .site .button:not(:hover):not(:active):not(.has-background),
@@ -3943,9 +3943,39 @@ table.wp-calendar-table caption {
 }
 
 .singular .entry-header {
-	border-bottom: 3px solid var(--global--color-border);
+	/* border-bottom: 3px solid var(--global--color-border); */
+	/* padding-bottom: calc(2 * var(--global--spacing-vertical)); */
+	/* margin-bottom: calc(3 * var(--global--spacing-vertical)); */
+}
+
+.singular .linebinh {
+	border-bottom: 1px solid #cecece;
+	position: relative;
+	/* border-bottom: 3px solid var(--global--color-border); */
 	padding-bottom: calc(2 * var(--global--spacing-vertical));
-	margin-bottom: calc(3 * var(--global--spacing-vertical));
+	/* margin-bottom: calc(3 * var(--global--spacing-vertical)); */
+}
+.singular .linebinh:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50px;
+    border-width: 12px 12px 0;
+    border-style: solid;
+    border-color: #cecece transparent;
+    display: block;
+    width: 0;
+}
+.singular .linebinh:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 51px;
+    border-width: 11px 11px 0;
+    border-style: solid;
+    border-color: #f5f5f5  transparent;
+    display: block;
+    width: 0;
 }
 
 .home .entry-header {
@@ -6001,6 +6031,7 @@ a{
 #footer ul.wp-block-categories-list {
     margin: -8px 0 0 0;
 }
+
 /* **********content*********** */
 .entry-header h2 a{	
 		text-transform: uppercase;
@@ -6105,3 +6136,197 @@ background-color:  #28a745 !important; /* Đổi màu chữ thành đỏ khi rê
 	margin-bottom: 0px !important;
 	padding-bottom: 10px;
 }
+
+/* Binh css */
+.nav-link{
+	margin-bottom: -1px;
+}
+.titlebinh {
+	font-family: 'Open Sans Condensed', sans-serif !important;
+	font-size: 2.1em !important;
+	font-weight: bold !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	/* position: relative; */
+}
+.binhdraw{
+	left: -5%;
+	top : 0%;
+	position: absolute;
+	background: #f5ce31;
+	padding: 15px 0px;
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+}
+.calender-binh {
+	display: inline-block;
+	color: black;
+	padding-left: 20px;
+	font-family: 'Prata', serif !important;
+	font-size: 1.0em !important;
+	position: relative;
+}
+.day-binh {
+	display: block;
+	border-bottom: solid 0.5px black;
+}
+.month-binh {
+	display: block;
+}
+.year-binh {
+	font-family: 'Prata', serif !important;
+	font-size: 1.0em !important;
+	color: black;
+	display: inline-block;
+	vertical-align: 10px;
+	position: absolute;
+	top: 32%;
+	left: 50%;
+}
+
+.yearnav {
+	font-family: 'Prata', serif !important;
+	font-size: 1.0em !important;
+	color: black;
+	display: inline-block;
+	vertical-align: 10px;
+	position: absolute;
+	top: 25%;
+	left: 115%;
+}
+.listnav{
+	background-color: white;
+}
+.indent{ padding-left: 1.8em }
+
+/* -- Module 10 -- */
+.color-recent-posts {
+	box-sizing: border-box;
+	background-color: #56bdbf !important;
+	padding-top: 30px !important;
+}
+
+li {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+.recent-post {
+	display: inline-block;
+	font-family: 'Open Sans', sans-serif !important;
+	font-size: 10px !important;
+    line-height: 1.42857143 !important;
+	color: white !important;
+	text-decoration: none !important;
+	margin-left: 20px !important;
+	margin-right: 20px !important;
+}
+
+.recent-post:link,
+.recent-post:visited,
+.recent-post:active {
+	outline: 0 !important;
+	color: white !important;
+}
+
+.recent-post:hover {
+	font-weight: 700 !important;
+	background: 0 0 !important;
+	outline: 0 !important;
+	text-decoration: underline !important;
+	text-decoration-color: white !important;
+}
+
+.view-posts {
+	color: white;
+}
+
+.btn-recent-post {
+	border: none !important;
+	background-color: #62c6c8 !important;
+	width: 100%;
+	padding: 10px 0 10px 0 !important;
+}
+
+.btn-recent-post:hover {
+	border: none #62c6c8 !important;
+	width: 100%;
+}
+
+.calender {
+	display: inline-block;
+	color: white;
+	padding-left: 30px;
+	font-family: 'Prata', serif !important;
+	font-size: 0.8em !important;
+}
+
+.day {
+	display: block;
+	border-bottom: solid 0.5px white;
+}
+.month {
+	display: block;
+}
+.year {
+	font-family: 'Prata', serif !important;
+	font-size: 0.8em !important;
+	color: white;
+	display: inline-block;
+	vertical-align: 10px;
+}
+
+/* -- /Module 10 -- */
+
+/* --- Module 14 --- */
+/* CSS Test begin */
+.comment-box {
+    margin-top: 30px !important;
+}
+/* CSS Test end */
+
+.comment-box img {
+    width: 50px;
+    height: 50px;
+}
+.comment-box .media-left {
+    padding-right: 10px;
+    width: 65px;
+}
+.comment-box .media-body p {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+.comment-box .media-body .media p {
+    margin-bottom: 0;
+}
+.comment-box .media-heading {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 7px 10px;
+    position: relative;
+    margin-bottom: -1px;
+	text-align: left;
+}
+.comment-box .media-heading:before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-width: 1px 0 0 1px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 10px;
+    left: -6px;
+}
+.heading-name-user {
+	color: #000 !important;
+	font-size: 18px !important;
+}
+
+/* --- /Module 14 --- */
+
+
