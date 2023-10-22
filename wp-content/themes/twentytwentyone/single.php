@@ -27,24 +27,46 @@ while ( have_posts() ) :
 		);
 	}
 
-	// If comments are open or there is at least one comment, load up the comment template.
-	if ( comments_open() || get_comments_number() ) {
-		comments_template();
-	}
+	
 
 	// Previous/next post navigation.
 	$twentytwentyone_next = is_rtl() ? twenty_twenty_one_get_icon_svg( 'ui', 'arrow_left' ) : twenty_twenty_one_get_icon_svg( 'ui', 'arrow_right' );
 	$twentytwentyone_prev = is_rtl() ? twenty_twenty_one_get_icon_svg( 'ui', 'arrow_right' ) : twenty_twenty_one_get_icon_svg( 'ui', 'arrow_left' );
 
-	$twentytwentyone_next_label     = esc_html__( 'Next post', 'twentytwentyone' );
-	$twentytwentyone_previous_label = esc_html__( 'Previous post', 'twentytwentyone' );
+	$twentytwentyone_next_label     = esc_html__( '', 'twentytwentyone' );
+	$twentytwentyone_previous_label = esc_html__( '', 'twentytwentyone' );
 
+	$post_day = get_the_date('d', $post->ID );
+	$post_month = get_the_date('m', $post->ID );
+	$post_year = get_the_date('y', $post->ID );
 	the_post_navigation(
 		array(
-			'next_text' => '<p class="meta-nav">' . $twentytwentyone_next_label . $twentytwentyone_next . '</p><p class="post-title">%title</p>',
-			'prev_text' => '<p class="meta-nav">' . $twentytwentyone_prev . $twentytwentyone_previous_label . '</p><p class="post-title">%title</p>',
+			'next_text' => '<p class="meta-nav">' . $twentytwentyone_next_label  . '</p>
+			<span class="timeclick">
+			<div class="calender-binh">
+				<div class="day-binh">'.$post_day.'</div>
+				<div class="month-binh">'.$post_month.'</div>
+				<div class="yearnav">'.$post_year.'</div>
+				</div>
+			</span>
+		<p class="post-title nav-linkcustom indent">%title</p>',
+			'prev_text' => '<p class="meta-nav">' . $twentytwentyone_previous_label . '</p>
+			<span class="timeclick">
+			<div class="calender-binh">
+				<div class="day-binh">'.$post_day.'</div>
+				<div class="month-binh">'.$post_month.'</div>
+				<div class="yearnav">'.$post_year.'</div>
+				</div>
+			</span>
+			<p class="post-title nav-linkcustom indent">%title</p>',
 		)
 	);
+
+
+	// If comments are open or there is at least one comment, load up the comment template.
+	if ( comments_open() || get_comments_number() ) {
+		comments_template();
+	}
 endwhile; // End of the loop.
 
 get_footer();
