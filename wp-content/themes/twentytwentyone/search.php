@@ -19,6 +19,7 @@ body {
 }
 
 	</style>
+	<div class="container">
 	<div class="row">
 		<div class="col-md-3">
 			<h5>Module 13</h5>
@@ -103,5 +104,7 @@ body {
 			</div>
 		</div>
 	</div>
+	</div>
+
 	
 <?php get_footer(); ?>

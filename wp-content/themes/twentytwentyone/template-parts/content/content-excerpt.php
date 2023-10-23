@@ -11,7 +11,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" class="list_new_view">
 
 <div class=row>
 <div class="col-md-3 col-xs-3 topnewstime entry-footer default-max-width">
