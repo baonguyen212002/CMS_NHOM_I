@@ -6078,12 +6078,10 @@ a{
 .indent{ padding-left: 1.8em }
 /* -- Module 9 -- */
 .content-cate {
-	/* margin: 30px 10px 30px 10px !important; */
 	
 	border: none !important;
 	background: none !important;
-	/*font-weight: 800;
-	font-size: 1.8em; */
+	
 }
 .content-cate h2{
 	font-weight: 800;
@@ -6104,12 +6102,12 @@ ul.category-list {
 	color: #f5ce32;
 	font-size: 24px;
 	padding-bottom: 30px;
-	padding-top: 30px;
+	padding-top: 25px;
 	padding-right: 10px;
 }
 
 ul.category-list li a{
-	margin: 0 10px;
+	margin: 0 15px;
 	color: #428bca !important;
     text-decoration: none;
 }
@@ -6118,7 +6116,7 @@ ul.category-list li a{
 	border-bottom: 1px solid rgb(85, 78, 78);
 	width: 100%;
 	margin-left: -10px;
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 }
 
 
