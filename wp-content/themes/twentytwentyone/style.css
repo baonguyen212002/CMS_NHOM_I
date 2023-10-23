@@ -6078,22 +6078,30 @@ a{
 .indent{ padding-left: 1.8em }
 /* -- Module 9 -- */
 .content-cate {
-	margin: 30px 10px 30px 10px !important;
+	/* margin: 30px 10px 30px 10px !important; */
+	
+	border: none !important;
+	background: none !important;
+	/*font-weight: 800;
+	font-size: 1.8em; */
+}
+.content-cate h2{
+	font-weight: 800;
+	font-size: 1.8em;
 }
 .class-backgound {
-	padding: 0 10px 30px 10px;
+	background: url(../../../wp-admin/images/bg_cr_grey.png);
+	height: 15px;
 }
 
 .border-top {
-	/* background:url(../img/bg_cr_grey.png); */
-	background: blue;
-	height: 15px;
+	background: #fff;
 }
 
 ul.category-list {
 	background-color: #fff !important;
 	list-style-type: disc;
-	color: yellow;
+	color: #f5ce32;
 	font-size: 24px;
 	padding-bottom: 30px;
 	padding-top: 30px;
@@ -6109,8 +6117,10 @@ ul.category-list li a{
 .border-bottom{
 	border-bottom: 1px solid rgb(85, 78, 78);
 	width: 100%;
-	margin-left: -20px;
+	margin-left: -10px;
+	padding-bottom: 20px;
 }
+
 
 /* -- /Module 9 -- */
 

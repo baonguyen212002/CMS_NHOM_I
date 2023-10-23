@@ -42,10 +42,9 @@ session_start();
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3">
-				<div class="content-cate">
-					<h2>Categories</h2>
-					<div class="class-backgound">
-						<div class="border-top"></div>
+				<div class="content-cate"><h2>Categories</h2></div>
+					<div class="class-backgound"></div>
+						<div class="border-top">
 						<ul class="category-list">
 							<?php
 								wp_list_categories('title_li=');
@@ -53,7 +52,6 @@ session_start();
 						</ul>
 					</div>
 				</div>
-			</div>
 			<div class="col-6">
 				<header class="entry-header alignwide linebinh">
 				<div class="row" style="margin-left:5px">
