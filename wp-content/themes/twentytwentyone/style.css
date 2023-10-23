@@ -6199,6 +6199,43 @@ background-color:  #28a745 !important; /* Đổi màu chữ thành đỏ khi rê
 	background-color: white;
 }
 .indent{ padding-left: 1.8em }
+/* -- Module 9 -- */
+.content-cate {
+	margin: 30px 10px 30px 10px !important;
+}
+.class-backgound {
+	padding: 0 10px 30px 10px;
+}
+
+.border-top {
+	/* background:url(../img/bg_cr_grey.png); */
+	background: blue;
+	height: 15px;
+}
+
+ul.category-list {
+	background-color: #fff !important;
+	list-style-type: disc;
+	color: yellow;
+	font-size: 24px;
+	padding-bottom: 30px;
+	padding-top: 30px;
+	padding-right: 10px;
+}
+
+ul.category-list li a{
+	margin: 0 10px;
+	color: #428bca !important;
+    text-decoration: none;
+}
+
+.border-bottom{
+	border-bottom: 1px solid rgb(85, 78, 78);
+	width: 100%;
+	margin-left: -20px;
+}
+
+/* -- /Module 9 -- */
 
 /* -- Module 10 -- */
 .color-recent-posts {

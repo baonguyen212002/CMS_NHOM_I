@@ -41,9 +41,18 @@ session_start();
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="container">
 		<div class="row">
-			<div class="col-2">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur iure voluptates nobis ea quis,
-					laudantium odio repudiandae aut corporis laboriosam?</p>
+			<div class="col-md-3">
+				<div class="content-cate">
+					<h2>Categories</h2>
+					<div class="class-backgound">
+						<div class="border-top"></div>
+						<ul class="category-list">
+							<?php
+								wp_list_categories('title_li=');
+							?>
+						</ul>
+					</div>
+				</div>
 			</div>
 			<div class="col-6">
 				<header class="entry-header alignwide linebinh">
@@ -82,7 +91,7 @@ session_start();
 					<?php twenty_twenty_one_entry_meta_footer(); ?>
 				</footer><!-- .entry-footer -->
 			</div>
-			<div class="col-4">
+			<div class="col-3">
 				<div class="color-recent-posts">
 					<ul class="wp-block-latest-posts__list wp-block-latest-posts">
 						
