@@ -39,7 +39,7 @@ session_start();
 		$post_year = get_the_date('y', $post->ID );
 	?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="container">
+	<div class="container-xl">
 		<div class="row">
 			<div class="col-md-3">
 				<div class="content-cate"><h2>Categories</h2></div>
