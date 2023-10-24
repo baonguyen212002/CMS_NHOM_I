@@ -11,8 +11,14 @@
 
 get_header();
 
-if (have_posts()) {
 	?>
+              <style>
+body {
+    background: url(http://fit.tdc.edu.vn/addons/default/themes/bootstrapThree/img/bg_pattern.png) repeat 	;
+    font-family: 'Open Sans', sans-serif;
+}
+
+	</style>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -62,7 +68,6 @@ if (have_posts()) {
 					<p class="text-content">' . $plain_text_content_prev . '[...]</p>
 				</div>
 				'); ?>
-			</div>
 			<div class="navigation-button">
 				<?php 
 				//Next Post
@@ -94,56 +99,63 @@ if (have_posts()) {
 			</div>
 		</div>
 	</div>
+
 	<!--- /Module: 13--->
 
 	<div class="col-6">
-		<header class="page-header alignwide">
-			<h1 class="page-title">
+		<div class="container">
+				<?php if (have_posts()) {?>
+				<header class="page-header alignwide">
+					<h1 class="page-title">
+						<?php
+						printf(
+							/* translators: %s: Search term. */
+							esc_html__('Results for "%s"', 'twentytwentyone'),
+							'<span class="page-description search-term">' . esc_html(get_search_query()) . '</span>'
+						);
+						?>
+					</h1>
+				</header><!-- .page-header -->
+
+				<div class="search-result-count default-max-width">
+					<?php
+					printf(
+						esc_html(
+							/* translators: %d: The number of search results. */
+							_n(
+								'We found %d result for your search.',
+								'We found %d results for your search.',
+								(int) $wp_query->found_posts,
+								'twentytwentyone'
+							)
+						),
+						(int) $wp_query->found_posts
+					);
+					?>
+				</div><!-- .search-result-count -->
 				<?php
-				printf(
-					/* translators: %s: Search term. */
-					esc_html__('Results for "%s"', 'twentytwentyone'),
-					'<span class="page-description search-term">' . esc_html(get_search_query()) . '</span>'
-				);
-				?>
-			</h1>
-		</header><!-- .page-header -->
+						// Start the Loop.
+						while (have_posts()) {
+							the_post();
 
-			<div class="search-result-count default-max-width">
-				<?php
-				printf(
-					esc_html(
-						/* translators: %d: The number of search results. */
-						_n(
-							'We found %d result for your search.',
-							'We found %d results for your search.',
-							(int) $wp_query->found_posts,
-							'twentytwentyone'
-						)
-					),
-					(int) $wp_query->found_posts
-				);
-				// Start the Loop.
-				while (have_posts()) {
-					the_post();
+							/*
+							* Include the Post-Format-specific template for the content.
+							* If you want to override this in a child theme, then include a file
+							* called content-___.php (where ___ is the Post Format name) and that will be used instead.
+							*/
+							get_template_part('template-parts/content/content-excerpt-search', get_post_format());
+							
+						} // End the loop.
 
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part('template-parts/content/content-excerpt', get_post_format());
-				} // End the loop.
-			
-				// Previous/next page navigation.
-				twenty_twenty_one_the_posts_navigation();
+						// Previous/next page navigation.
+						twenty_twenty_one_the_posts_navigation();
 
-	// If no content, include the "No posts found" template.
-} else {
-	get_template_part('template-parts/content/content-none');
-}
-?>
-		</div>
+						// If no content, include the "No posts found" template.
+					} else {
+						get_template_part('template-parts/content/content-none');
+					}
+					?>
+			</div>
 		<!-- .search-result-count -->
 	</div>
 	<div class="col-3">

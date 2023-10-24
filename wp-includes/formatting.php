@@ -3990,7 +3990,7 @@ function wp_trim_excerpt( $text = '', $post = null ) {
 		}
 
 		/* translators: Maximum number of words used in a post excerpt. */
-		$excerpt_length = (int) _x( '55', 'excerpt_length' );
+		$excerpt_length = (int) _x( '30', 'excerpt_length' );
 
 		/**
 		 * Filters the maximum number of words in a post excerpt.
