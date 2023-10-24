@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * The template for displaying search results pages
  *
@@ -129,6 +130,7 @@ get_header();
 					);
 					?>
 				</div><!-- .search-result-count -->
+				
 				<?php
 				// Start the Loop.
 				while (have_posts()) {
@@ -176,4 +178,19 @@ get_header();
 		</div>
 	</div>
 </div>
+<div class="container">
+					<div class="row">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<h4>Latest News</h4>
+							<ul class="timeline">
+								<?php
+									if(isset($_SESSION['latest-posts']))
+										echo $_SESSION['latest-posts'];
+								?>
+							</ul>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+				</div>
 <?php get_footer(); ?>
