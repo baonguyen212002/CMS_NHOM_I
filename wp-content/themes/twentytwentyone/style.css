@@ -6141,39 +6141,44 @@ li {
 /* -- /Module 10 -- */
 
 /* --- Module 13 --- */
-
 .content-nav {
 	display: block;
-	width: 600px;
-    height: 300px;
+	/* width: 600px; */
+    height: auto;
 	text-align: center;
 	box-sizing: border-box;
+	overflow: hidden;
+	margin: 5px !important;
+	padding: 5px !important;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .post-title-nav {
 	text-align: left;
 	font-size: 22px;
+	margin: 0 !important;
 }
 
-hr {
-    border-top: 5px solid  #999eab;
-	width: 150px;
+.boder-bottom-hr {
+    border-top: 5px solid  #999eab !important;
+	width: 80px !important;
     margin: 0;
-	
+	padding: 10px;
 }
 
 .image-nav {
-	display: inline-block;
 	width: 300px;
 	height: 200px;
+	box-sizing: border-box;
 }
-
 .text-content {
 	text-align: left !important;
+	max-width: 100%;
+	word-wrap: break-word;
 	box-sizing: border-box;
 }
 
-/* --- Module 13 --- */
+/* --- /Module 13 --- */
 
 /* --- Module 14 --- */
 /* CSS Test begin */

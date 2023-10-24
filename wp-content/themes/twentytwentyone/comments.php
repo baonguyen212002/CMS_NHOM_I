@@ -44,7 +44,7 @@ $twenty_twenty_one_comment_count = get_comments_number();
 			<?php endif; ?>
 		</h2><!-- .comments-title -->
 
-		<div class="container">
+		<!-- <div class="container"> -->
 			<div class="row">
 				<div class="media comment-box">
 					<ol class="comment-list">
@@ -61,7 +61,8 @@ $twenty_twenty_one_comment_count = get_comments_number();
 					<!-- .comment-list -->
 				</div>
 			</div>
-		</div>
+		<!-- </div> -->
+		
 		<?php
 		the_comments_pagination(
 			array(

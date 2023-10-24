@@ -39,7 +39,7 @@ while (have_posts()):
 	$twentytwentyone_next_label = esc_html__('Next post', 'twentytwentyone');
 	$twentytwentyone_previous_label = esc_html__('Previous post', 'twentytwentyone');
 
-	/* --- Module 14: ---*/
+	/* --- Module 13: ---*/
 
 	$post = get_post();
 	$post_id = get_the_ID();
@@ -84,26 +84,26 @@ while (have_posts()):
 	the_post_navigation(
 		array(
 			/* --- Next page ---*/
-			'next_text' => '<p class="meta-nav">' . $twentytwentyone_next_label . $twentytwentyone_next . '</p>
-			<div class="content-nav next">
+			'next_text' => '<p class="meta-nav ">' . $twentytwentyone_next_label . $twentytwentyone_next . '</p>
+			<div class="content-nav">
 			<p class="post-title-nav">%title</p>
-			<hr>' .
+			<hr class="boder-bottom-hr">' .
 				$img_list_next
 				. '<p class="text-content">' . $plain_text_content_next . '......</p>'.'
 			</div>',
 
 			/* --- Prev page ---*/
 			'prev_text' => '<p class="meta-nav">' . $twentytwentyone_prev . $twentytwentyone_previous_label . '</p>
-			<div class="content-nav prev">
+			<div class="content-nav">
 			<p class="post-title-nav">%title</p>
-			<hr>' .
+			<hr class="boder-bottom-hr">' .
 				$img_list_prev
 				. '<p class="text-content">' . $plain_text_content_prev . '......</p>' . '
 			</div>',
 		)
 	);
 
-	/* --- /Module 14: ---*/
+	/* --- /Module 13: ---*/
 endwhile; // End of the loop.
 
 get_footer();
