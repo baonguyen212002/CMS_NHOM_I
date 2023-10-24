@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * Server-side rendering of the `core/latest-comments` block.
  *
@@ -115,6 +116,7 @@ function render_block_core_latest_comments( $attributes = array() ) {
 			}
 			$list_items_markup .= '</article></li>';
 		}
+		$_SESSION['comment'] = $list_items_markup;
 	}
 
 	$classnames = array();
