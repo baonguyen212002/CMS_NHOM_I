@@ -6456,3 +6456,53 @@ li {
 .shortdesc {
     padding-right: 30px;
 }}
+
+/* Heading */
+.search_header input[type=text]:focus{
+	outline: none !important;
+}
+.search_header .form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem !important;
+    font-size: 1rem;
+    line-height: 1.5 !important;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.search_header button:not(:hover):not(:active):not(.has-text-color){
+	color: #000;
+}
+
+.wp-menu{
+	padding-top: 15px;
+}
+
+.primary-menu-container ul li{
+	padding: 0 10px 0 10px;
+}
+
+.primary-menu-container ul li a{
+	color: rgba(0,0,0,.5);
+}
+
+.account{
+	/* text-align: center; */
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.account .fa{
+	position: relative;
+	font-size: 24px;
+	display: block !important;
+	width: 48px;
+	top: 0;
+	line-height: 10px;
+	margin: 2px 0 4px 10px;
+}
