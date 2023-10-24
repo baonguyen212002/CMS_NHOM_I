@@ -6324,6 +6324,67 @@ li {
 
 /* -- /Module 10 -- */
 
+/* -- /Module 11 -- */
+.sidebar{
+    display: flex;
+    justify-content: space-between;
+}
+.width_common {
+    width: 100%;
+    float: left;
+}
+#dv1,#dv2,#dv3,#dv4,#dv5{
+	width:100%;
+    border: 0px solid;
+    padding: 0px;
+    box-shadow: 0.5px 0.5px 0.5px #AAA;
+}
+
+#sidebar-ben-trai{
+    width: 20%;
+}
+
+#sidebar-ben-trai ul li{
+    position: relative;
+}
+#sidebar-ben-trai ul li a{
+    margin-left: 20px;
+}
+.box-category {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+}
+.box-xemnhieu .title-box-category {
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 0;
+    color: #757575;
+}
+.box-xemnhieu .list-top-view {
+    position: relative;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.title-box-category {
+    display: block;
+    position: relative;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    font-family: "Merriweather",serif;
+    color: #222;
+    font-weight: bold;
+
+}
+.box-xemnhieu .list-top-view {
+    position: relative;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+
+/* -- /Module 11 -- */
+
 /* --- Module 13 --- */
 .content-nav {
 	display: block;
