@@ -6327,24 +6327,41 @@ li {
 /* -- /Module 10 -- */
 /*--Module 12--*/
 
-.wp-block-group__inner-container >h2{
-	display: grid !important;
+
+.commen-12 ul.wp-block-latest-posts__list .wp-block-latest-posts li a {
+    text-decoration: none;
+    padding: 4px 10px;
+    display: block;
+    margin-bottom: 0;
+    border-bottom: 1px solid #efefef;
+    color: #488dc6;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    background: transparent
 }
-.comment-12 .wp-block-group__inner-container >h2::after{
-	content: "";
-	border: 2px solid#d9d9d9ee;
-	width: 26%;
+
+.commen-12 ul.wp-block-latest-posts__list .wp-block-latest-posts li a:hover {
+    background: #efefef;
+    color: #326e99
 }
-.wp-block-latest-comments .wp-block-latest-comments__comment-excerpt p {
-	font-weight: 600;
-	color: #4b8cd0;
+
+.commen-12 ul.wp-block-latest-posts__list .wp-block-latest-posts li a:after {
+    font-family: FontAwesome;
+    content: "\f105";
+    float: right
 }
-.has-avatars .wp-block-latest-comments__comment .wp-block-latest-comments__comment-excerpt{
-	margin-left: 1.25em;
+
+.commen-12 .border-bottom-hr {
+    border-color: #999eab;
+    margin: 0;
+    border-width: 2px;
+    width: 45px;
+    margin-bottom: 10px
 }
-#sidebar-left .widget .wp-block-group .wp-block-group__inner-container h2.wp-block-heading {
-	color: #576895;
+.commen-12 .border-bottom h4 {
+    font-size: 15px
 }
+
 
 /*--Module 12--*/
 

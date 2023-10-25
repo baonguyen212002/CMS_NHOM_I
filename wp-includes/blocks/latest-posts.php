@@ -74,6 +74,7 @@ function render_block_core_latest_posts( $attributes ) {
 	$list_items_markup = '';
 	$list_items_minh = '';
 	$list_latest_post = '';
+	$list_posts_title = '';
 	foreach ( $recent_posts as $post ) {
 		$post_link = esc_url( get_permalink( $post ) );
 		$title     = get_the_title( $post );
@@ -84,6 +85,7 @@ function render_block_core_latest_posts( $attributes ) {
 
 		$list_items_markup .= '<li>';
 		$list_items_minh .= '<li>';
+		$list_posts_title .= '<li>';
 
 		if ( $attributes['displayFeaturedImage'] && has_post_thumbnail( $post ) ) {
 			$image_style = '';
@@ -129,8 +131,13 @@ function render_block_core_latest_posts( $attributes ) {
 				esc_attr( $image_classes ),
 				$featured_image
 			);
+			$list_posts_title .= sprintf(
+				'<div class="%1$s">%2$s</div>',
+				esc_attr( $image_classes ),
+				$featured_image
+			);
 		}
-
+		
 		/* -- Module 10 -- */
 		// class="wp-block-categories-list list-unstyled quick-links wp-block-categories"
 		$post_day = get_the_date('d', $post->ID );
@@ -150,13 +157,18 @@ function render_block_core_latest_posts( $attributes ) {
 			esc_url( $post_link ),
 			$title
 		);
+		
 		$post_month_latest = get_the_date('M', $post->ID );
 		$post_year_latest = get_the_date('Y', $post->ID );
 		$post = get_post();
 		$post_id = get_the_ID();
 		$post_content = get_post_field('post_content', $post_id);
 
-
+		$list_posts_title .=sprintf(
+			'<a href="%1$s">%2$s</a>',
+			esc_url( $post_link ),
+			$title
+		);
 		$plain_text_content = strip_tags($post_content); 
 		$max_length = 300; 
 		if (strlen($plain_text_content) > $max_length) {
@@ -178,7 +190,6 @@ function render_block_core_latest_posts( $attributes ) {
 		$_SESSION['recent-posts'] = $list_items_minh;
 		$_SESSION['latest-posts'] = $list_latest_post;
 		/* -- Module 10 -- */
-		
 		if ( isset( $attributes['displayAuthor'] ) && $attributes['displayAuthor'] ) {
 			$author_display_name = get_the_author_meta( 'display_name', $post->post_author );
 
@@ -232,6 +243,9 @@ function render_block_core_latest_posts( $attributes ) {
 		}
 
 		$list_items_markup .= "</li>\n";
+		$list_posts_title .= "</li>\n";
+		// Module 12
+		$_SESSION['list-posts-title'] = $list_posts_title;
 	}
 
 	remove_filter( 'excerpt_length', 'block_core_latest_posts_get_excerpt_length', 20 );

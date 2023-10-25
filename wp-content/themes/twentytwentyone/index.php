@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * The main template file
  *
@@ -118,7 +119,37 @@ get_header(); ?>
 
 		</div>
 
-		<div class="col-md-3"><?php get_template_part('sidebar','modul-13') ?></div>
+		<div class="col-md-3">
+			<div class="container">
+				<p>Comment</p>
+				<hr class="border-bottom-hr">
+				<div class="content-comment">
+					<ul class="wp-block-latest-posts__list wp-block-latest-posts">
+						<?php
+							// if(isset($_SESSION['list-posts-title']))
+							// echo $_SESSION['list-posts-title'];
+							$args = array(
+								'numberposts' => 5, // Số lượng bài viết bạn muốn lấy
+								'post_status' => 'publish', // Chỉ lấy các bài viết đã được xuất bản
+							);
+							
+							$recent_posts = get_posts($args);
+							
+							if ($recent_posts) {
+								foreach ($recent_posts as $post) {
+									setup_postdata($post);
+									echo '<li class="type-12"><a href="' . get_permalink() . '">' . get_the_title() . '</a></li><br>';
+								}
+								wp_reset_postdata(); // Đặt lại dữ liệu bài viết
+							} else {
+								echo 'Không tìm thấy bài viết gần đây.';
+							}
+						?>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
 
 	</div>
 </div>
