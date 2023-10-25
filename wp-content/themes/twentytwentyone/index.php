@@ -115,8 +115,7 @@ get_header(); ?>
 
 			}
 		?>
-		</div>
-	//phai	<div class="col-md-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur porro cum quisquam quae fuga impedit ipsam aut eius ducimus officiis sunt nulla perspiciatis atque dolore, dolor iusto esse accusantium possimus?</div>
+		</div><div class="col-md-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur porro cum quisquam quae fuga impedit ipsam aut eius ducimus officiis sunt nulla perspiciatis atque dolore, dolor iusto esse accusantium possimus?</div>
 	</div>
 </div>
 <?php
