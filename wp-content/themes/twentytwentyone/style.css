@@ -6040,9 +6040,6 @@ a{
 		color: #428bca;
 		font-size: 18px !important;
 }
-.entry-header h2{
-	margin: 10px 0 !important;
-}
 .entry-title a:hover {
     color: #2A6496; /* Đổi màu chữ thành đỏ khi rê chuột vào */
 }
@@ -6056,7 +6053,6 @@ a{
 body .posted-date {
     font-family: 'Prata', serif !important;
     font-size: 3.1em;
-    line-height: 1em;
     margin-left: 15px;
 }
 .posted-on > .posted-month{
@@ -6068,10 +6064,7 @@ body .posted-date {
 	margin: 0 0 10px !important;
 	/* padding-right: 200px; */
 }
-.row .col-md-3{
-	/* padding-left: 273px !important; */
-    padding-top: 9px;
-}
+
 .category-uncategorized{
 	margin-left: 10px;
 }
@@ -6524,7 +6517,6 @@ li {
 }
 
 .list_new_view .top_news_block_desc .topnewstime {
-    margin-top: 12px;
     text-align: center;
     padding-left: 0;
 }
@@ -6541,7 +6533,7 @@ li {
 .list_new_view .topnewstime > .topnewsdate {
     font-family: 'Prata', serif;
     font-size: 3.1em;
-    line-height: 1em;
+    line-height: 1.1em;
     /* margin-left: 15px; */
 }
 
