@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * The template for displaying search results pages
  *
@@ -129,6 +130,7 @@ get_header();
 					);
 					?>
 				</div><!-- .search-result-count -->
+				
 				<?php
 				// Start the Loop.
 				while (have_posts()) {
@@ -156,24 +158,81 @@ get_header();
 		</div>
 	</div>
 	<div class="col-md-3">
-		<div class="container">
-			<div class="row">
-				<div class="media comment-box">
-					<ol class="comment-list">
-						<?php
-						wp_list_comments(
-							array(
-								'avatar_size' => 60,
-								'style' => 'ol',
-								'short_ping' => true,
-							)
-						);
+		<div class="media comment-box">
+			<ol class="comment-list">
+				<?php
+				$random_post = get_posts(
+					array(
+						'numberposts' => 1,
+						// Số lượng bài viết
+						'orderby' => 'rand' // Sắp xếp ngẫu nhiên
+					)
+				);
+				if ($random_post):
+					$post_id = $random_post[0]->ID;
+
+					$comments = get_comments(
+						array(
+							'post_id' => $post_id
+						)
+					);
+
+					$comment_author = get_comment_author(); // Tên người bình luận
+					$comment_author_email = get_comment_author_email(); // Email của người bình luận
+					$comment_author_url = get_comment_author_url_link(); // URL của người bình luận (nếu có)
+					$comment_avatar = get_avatar($comment_author_email, 80); // Lấy avatar dựa trên email người bình luận
+				
+					echo '<h5> Comment </h5><hr>';
+					foreach ($comments as $comment):
+						$comment_author = get_comment_author($comment);
+						$comment_content = $comment->comment_content;
 						?>
-					</ol>
-					<!-- .comment-list -->
-				</div>
-			</div>
+						<li class="comment">
+							<article class="comment-body">
+								<footer class="comment-meta">
+									<div class="media">
+										<div class="media-left">
+											<a href="#">
+												<?php
+												echo get_avatar($comment, 100);
+												?>
+											</a>
+										</div>
+										<div class="media-body body-14">
+											<h4 class="media-heading">
+												<?php
+												echo $comment_author;
+												// echo "Tên user";
+												?>
+											</h4>
+											<p>
+												<?php
+												echo $comment_content;
+												?>
+											</p>
+										</div>
+									</div>
+								</footer>
+							</article>
+						</li>
+					<?php endforeach; endif; ?>
+			</ol>
 		</div>
 	</div>
 </div>
+<div class="container">
+					<div class="row">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<h4>Latest News</h4>
+							<ul class="timeline">
+								<?php
+									if(isset($_SESSION['latest-posts']))
+										echo $_SESSION['latest-posts'];
+								?>
+							</ul>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+				</div>
 <?php get_footer(); ?>

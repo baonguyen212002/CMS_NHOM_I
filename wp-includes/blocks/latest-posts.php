@@ -73,7 +73,7 @@ function render_block_core_latest_posts( $attributes ) {
 
 	$list_items_markup = '';
 	$list_items_minh = '';
-
+	$list_latest_post = '';
 	foreach ( $recent_posts as $post ) {
 		$post_link = esc_url( get_permalink( $post ) );
 		$title     = get_the_title( $post );
@@ -124,6 +124,11 @@ function render_block_core_latest_posts( $attributes ) {
 				esc_attr( $image_classes ),
 				$featured_image
 			);
+			$list_latest_post .= sprintf(
+				'<div class="%1$s">%2$s</div>',
+				esc_attr( $image_classes ),
+				$featured_image
+			);
 		}
 
 		/* -- Module 10 -- */
@@ -134,8 +139,8 @@ function render_block_core_latest_posts( $attributes ) {
 		$list_items_minh .= '<div class="calender">
 		<div class="day">'.$post_day.'</div>
 		<div class="month">'.$post_month.'</div>
-	</div>
-	<div class="year">'.$post_year.'</div>'. sprintf(
+		</div>
+		<div class="year">'.$post_year.'</div>'. sprintf(
 			'<div class="year"><a class="wp-block-latest-posts__post-title recent-post" href="%1$s">%2$s</a></div>',
 			esc_url( $post_link ),
 			$title
@@ -145,8 +150,33 @@ function render_block_core_latest_posts( $attributes ) {
 			esc_url( $post_link ),
 			$title
 		);
-		$_SESSION['recent-posts'] = $list_items_minh;
+		$post_month_latest = get_the_date('M', $post->ID );
+		$post_year_latest = get_the_date('Y', $post->ID );
+		$post = get_post();
+		$post_id = get_the_ID();
+		$post_content = get_post_field('post_content', $post_id);
 
+
+		$plain_text_content = strip_tags($post_content); 
+		$max_length = 300; 
+		if (strlen($plain_text_content) > $max_length) {
+			$last_space = strrpos(substr($plain_text_content, 0, $max_length), ' ');
+			if ($last_space !== false) {
+				$plain_text_content = substr($plain_text_content, 0, $last_space); 
+			}
+		}
+		$list_latest_post .= sprintf(
+			'<li>
+				<a href="%1$s">%2$s</a>
+				<a href="#" class="float-right">'.$post_day.' '.$post_month_latest.', '.$post_year_latest.'</a>
+				<p>'.$plain_text_content.'.....</p>
+			</li>
+			',
+			esc_url( $post_link ),
+			$title
+		);
+		$_SESSION['recent-posts'] = $list_items_minh;
+		$_SESSION['latest-posts'] = $list_latest_post;
 		/* -- Module 10 -- */
 		
 		if ( isset( $attributes['displayAuthor'] ) && $attributes['displayAuthor'] ) {
