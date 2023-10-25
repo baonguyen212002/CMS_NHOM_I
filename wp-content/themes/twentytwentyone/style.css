@@ -6107,8 +6107,11 @@ background-color:  #28a745 !important; /* Đổi màu chữ thành đỏ khi rê
 }
 .search-field{
 	margin: 0px !important;
-	border: 1px  solid #DFDFDF !important;
+	/* border: 1px  solid #DFDFDF !important; */
 	border-radius: 10px !important;
+}
+.page-description {
+	color: #000 !important;
 }
 .fas {
     font-weight: 600;
@@ -6417,6 +6420,10 @@ li {
 	margin: 5px !important;
 	padding: 5px !important;
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.content-nav a {
+	color: #000 !important;
 }
 
 .post-title-nav {

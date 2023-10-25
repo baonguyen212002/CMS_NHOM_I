@@ -44,6 +44,7 @@ get_header();
 				$post_prev = get_previous_post();
 				$post_prev_id = $post_prev->ID;
 				$post_prev_title = $post_prev->post_title;
+				$post_prev_url = get_permalink($post_prev_id);
 
 				$post_content_prev = get_post_field('post_content', $post_prev_id);
 
@@ -61,7 +62,7 @@ get_header();
 
 				previous_post_link('
 					<div class="content-nav">
-						<p class="post-title-nav">' . $post_prev_title . '</p>
+					<a href="'. $post_prev_url . '"> <p class="post-title-nav">' . $post_prev_title . '</p></a>
 						<hr class="boder-bottom-hr">
 						' . $img_list_prev . '
 						<p class="text-content">' . $plain_text_content_prev . '[...]</p>
@@ -73,6 +74,7 @@ get_header();
 					$post_next = get_next_post();
 					$post_next_id = $post_next->ID;
 					$post_next_title = $post_next->post_title;
+					$post_next_url = get_permalink($post_next_id);
 					$post_content_next = get_post_field('post_content', $post_next_id);
 
 					// Chỉ lấy ảnh trong the_content()
@@ -89,7 +91,7 @@ get_header();
 
 					next_post_link('
 					<div class="content-nav">
-						<p class="post-title-nav">' . $post_next_title . '</p>
+					<a href="'. $post_next_url . '"> <p class="post-title-nav">' . $post_next_title . '</p></a>
 						<hr class="boder-bottom-hr">
 						' . $img_list_next . '
 						<p class="text-content">' . $plain_text_content_next . '[...]</p>
