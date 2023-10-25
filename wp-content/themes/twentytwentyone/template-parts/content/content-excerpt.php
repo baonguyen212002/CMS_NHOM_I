@@ -14,7 +14,7 @@
 <article id="post-<?php the_ID(); ?>" class="list_new_view">
 
 <div class=row>
-<div class="col-md-3 col-xs-3 topnewstime entry-footer default-max-width">
+<div class="col-md-3 col-xs-3 topnewstime default-max-width text-center">
 		<?php twenty_twenty_one_entry_meta_footer(); ?>
 </div><!-- .entry-footer -->
 <div class="col-md-9 col-xs-9 shortdesc">
