@@ -23,50 +23,58 @@ session_start();
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
 
-	<style>
-		body{
-			/* background-color: red; */
-			background: url(http://fit.tdc.edu.vn/addons/default/themes/bootstrapThree/img/bg_pattern.png) repeat;
-		}
-		.h7
-		{
-			font-size: 0.9rem
-		}
-	</style>
-	<?php 
-		$post_day = get_the_date('d', $post->ID );
-		$post_month = get_the_date('m', $post->ID );
-		$post_year = get_the_date('y', $post->ID );
-	?>
+<style>
+	body {
+		/* background-color: red; */
+		background: url(http://fit.tdc.edu.vn/addons/default/themes/bootstrapThree/img/bg_pattern.png) repeat;
+	}
+
+	.h7 {
+		font-size: 0.9rem
+	}
+</style>
+<?php
+$post_day = get_the_date('d', $post->ID);
+$post_month = get_the_date('m', $post->ID);
+$post_year = get_the_date('y', $post->ID);
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="container-xl">
 		<div class="row">
 			<div class="col-md-3">
-				<div class="content-cate"><h2>Categories</h2></div>
-					<div class="class-backgound"></div>
-						<div class="border-top">
-						<ul class="category-list">
-							<?php
-								wp_list_categories('title_li=');
-							?>
-						</ul>
-					</div>
+				<div class="content-cate">
+					<h2>Categories</h2>
 				</div>
+				<div class="class-backgound"></div>
+				<div class="border-top">
+					<ul class="category-list">
+						<?php
+						wp_list_categories('title_li=');
+						?>
+					</ul>
+				</div>
+			</div>
 			<div class="col-6">
 				<header class="entry-header alignwide linebinh">
-				<div class="row" style="margin-left:5px">
-				<?php the_title( '<h1 class="col-md-10 col-xs-9 entry-title titlebinh">', '</h1>' ); ?>
-					<div class="col-md-2 col-xs-3 ">
-						<div class="binhdraw">
-							<div class="calender-binh">
-								<div class="day-binh"><?php echo $post_day ?></div>
-								<div class="month-binh"><?php echo $post_month ?></div>
+					<div class="row" style="margin-left:5px">
+						<?php the_title('<h1 class="col-md-10 col-xs-9 entry-title titlebinh">', '</h1>'); ?>
+						<div class="col-md-2 col-xs-3 ">
+							<div class="binhdraw">
+								<div class="calender-binh">
+									<div class="day-binh">
+										<?php echo $post_day ?>
+									</div>
+									<div class="month-binh">
+										<?php echo $post_month ?>
+									</div>
+								</div>
+								<div class="year-binh">'
+									<?php echo $post_year ?>
+								</div>
 							</div>
-							<div class="year-binh">'<?php echo $post_year ?></div>
 						</div>
+
 					</div>
-					
-				</div>
 					<?php twenty_twenty_one_post_thumbnail(); ?>
 				</header><!-- .entry-header -->
 
@@ -92,11 +100,32 @@ session_start();
 			<div class="col-3">
 				<div class="color-recent-posts">
 					<ul class="wp-block-latest-posts__list wp-block-latest-posts">
-						
 						<?php
-							if(isset($_SESSION['recent-posts']))
-								echo $_SESSION['recent-posts'];
-							?>
+						$args = array(
+							'numberposts' => 5,
+							// Số lượng bài viết bạn muốn lấy
+							'post_status' => 'publish',
+							// Chỉ lấy các bài viết đã được xuất bản
+						);
+
+						$recent_posts = get_posts($args);
+						$post_day = get_the_date('d', $post->ID);
+						$post_month = get_the_date('m', $post->ID);
+						$post_year = get_the_date('y', $post->ID);
+
+						if ($recent_posts) {
+							foreach ($recent_posts as $post) {
+								setup_postdata($post);
+								echo '<div class="calender">
+								<div class="day">'.$post_day.'</div>
+								<div class="month">'.$post_month.'</div>
+								</div>
+								<div class="year">'.$post_year.'</div>
+								<div class="year"><a class="wp-block-latest-posts__post-title recent-post" href="' . get_permalink() . '">' . get_the_title() . '</a></div><br>';
+							}
+							wp_reset_postdata(); // Đặt lại dữ liệu bài viết
+						}
+						?>
 					</ul>
 					<button class="btn-recent-post"><span class="view-posts">XEM TẤT CẢ</span></button>
 				</div>
