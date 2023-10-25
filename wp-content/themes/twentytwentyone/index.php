@@ -117,6 +117,7 @@ get_header(); ?>
 		?>
 
 		</div>
+
 		<div class="col-md-3"><?php get_template_part('sidebar','modul-13') ?></div>
 
 	</div>
