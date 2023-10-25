@@ -698,7 +698,7 @@ template {
 .default-max-width {
 	max-width: var(--responsive--aligndefault-width);
 	margin-left: auto;
-	/* margin-right: auto; */
+	margin-right: auto;
 }
 
 .widget-area,
@@ -6232,6 +6232,7 @@ ul.category-list {
 	padding-bottom: 30px;
 	padding-top: 25px;
 	padding-right: 10px;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
 }
 
 ul.category-list li a{
@@ -6351,6 +6352,67 @@ li {
 
 /*--Module 12--*/
 
+/* -- /Module 11 -- */
+.sidebar{
+    display: flex;
+    justify-content: space-between;
+}
+.width_common {
+    width: 100%;
+    float: left;
+}
+#dv1,#dv2,#dv3,#dv4,#dv5{
+	width:100%;
+    border: 0px solid;
+    padding: 0px;
+    box-shadow: 0.5px 0.5px 0.5px #AAA;
+}
+
+#sidebar-ben-trai{
+    width: 20%;
+}
+
+#sidebar-ben-trai ul li{
+    position: relative;
+}
+#sidebar-ben-trai ul li a{
+    margin-left: 20px;
+}
+.box-category {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+}
+.box-xemnhieu .title-box-category {
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 0;
+    color: #757575;
+}
+.box-xemnhieu .list-top-view {
+    position: relative;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.title-box-category {
+    display: block;
+    position: relative;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    font-family: "Merriweather",serif;
+    color: #222;
+    font-weight: bold;
+
+}
+.box-xemnhieu .list-top-view {
+    position: relative;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+
+/* -- /Module 11 -- */
+
 /* --- Module 13 --- */
 .content-nav {
 	display: block;
@@ -6394,10 +6456,19 @@ li {
 /* --- Module 14 --- */
 /* CSS Test begin */
 .comment-box {
-    margin-top: 30px !important;
+	display: block;
+    margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	word-wrap: break-word;
+	box-sizing: border-box;
+}
+.comment-body {
+	margin-bottom: 0 !important;
+}
+.comment-meta {
+	margin: 0 !important;
 }
 /* CSS Test end */
-
 .comment-box img {
     width: 50px;
     height: 50px;
@@ -6409,9 +6480,21 @@ li {
 .comment-box .media-body p {
     border: 1px solid #ddd;
     padding: 10px;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	box-sizing: border-box;
 }
 .comment-box .media-body .media p {
     margin-bottom: 0;
+}
+.media-body {
+	max-width: 900px;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	box-sizing: border-box;
+}
+.body-14 {
+	max-width: 400px !important;
 }
 .comment-box .media-heading {
     background-color: #f5f5f5;
@@ -6604,4 +6687,8 @@ ul.timeline > li:before {
     width: 20px;
     height: 20px;
     z-index: 400;
+}
+/* fix-content-single */
+.entry-single > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator){
+	max-width: none !important;
 }
