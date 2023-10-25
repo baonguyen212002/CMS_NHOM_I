@@ -70,7 +70,7 @@ session_start();
 					<?php twenty_twenty_one_post_thumbnail(); ?>
 				</header><!-- .entry-header -->
 
-				<div class="entry-content">
+				<div class="entry-content entry-single">
 					<?php
 					the_content();
 
