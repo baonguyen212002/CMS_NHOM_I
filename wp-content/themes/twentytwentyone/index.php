@@ -58,7 +58,7 @@ get_header(); ?>
 <h2><span class="sidebar-ben-trai">3</span></h2>
 	<h3 class="title-news"><a href="http://localhost:8080/wordpress/2023/10/20/messi-lap-cu-dup-argentina-xay-cao-dinh-bang/" data-itm-source="#vn_source=Home&amp;vn_campaign=Box-XemNhieuNhat&amp;vn_medium=TitleBoxXemNhieuNhat&amp;vn_term=Desktop" title="Messi lập cú đúp, Argentina xây cao đỉnh bảng" data-itm-added="1">Messi lập cú đúp, Argentina xây cao đỉnh bảng</a>
 	<span class="meta-news">
-		
+
 <a class="count_cmt" href="http://localhost:8080/wordpress/2023/10/20/messi-lap-cu-dup-argentina-xay-cao-dinh-bang/" style="white-space: nowrap; display: inline-block;">
 </a>
 </span>
@@ -70,7 +70,7 @@ get_header(); ?>
 <h2><span class="sidebar-ben-trai">4</span></h2>
 	<h3 class="title-news"><a href="http://localhost:8080/wordpress/2023/10/20/berbatov-ronaldo-chi-dung-lai-khi-cau-ay-muon/"  data-itm-source="#vn_source=Home&amp;vn_campaign=Box-XemNhieuNhat&amp;vn_medium=TitleBoxXemNhieuNhat&amp;vn_term=Desktop"title="Berbatov: ‘Ronaldo chỉ dừng lại khi cậu ấy muốn’'" data-itm-added="1">Berbatov: ‘Ronaldo chỉ dừng lại khi cậu ấy muốn’ 'nhà đầu tư chủ quan'</a>
 	<span class="meta-news">
-		
+
 <a class="count_cmt" href="http://localhost:8080/wordpress/2023/10/20/berbatov-ronaldo-chi-dung-lai-khi-cau-ay-muon/" style="white-space: nowrap; display: inline-block;">
 </a>
 	</span>
@@ -82,16 +82,16 @@ get_header(); ?>
 <h2><span class="sidebar-ben-trai">5</span></h2>
 	<h3 class="title-news"><a href="http://localhost:8080/wordpress/2023/10/18/hello-world/"  data-itm-source="#vn_source=Home&amp;vn_campaign=Box-XemNhieuNhat&amp;vn_medium=TitleBoxXemNhieuNhat&amp;vn_term=Desktop"title="Berbatov: ‘Neymar chấn thương trong trận thua của Brazil’'" data-itm-added="1">Berbatov: ‘Neymar chấn thương trong trận thua của Brazil'</a>
 	<span class="meta-news">
-		
+
 <a class="count_cmt" href="http://localhost:8080/wordpress/2023/10/18/hello-world/" style="white-space: nowrap; display: inline-block;">
 </a>
 	</span>
 	</h3>
 </article>
 </div>
-            
+
                     </div>
-                
+
 				</div>
 	</div>
 		<div class="col-md-6">
@@ -116,7 +116,7 @@ get_header(); ?>
 			}
 		?>
 		</div>
-	//phai	<div class="col-md-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur porro cum quisquam quae fuga impedit ipsam aut eius ducimus officiis sunt nulla perspiciatis atque dolore, dolor iusto esse accusantium possimus?</div>
+		<div class="col-md-3"><?php get_template_part('sidebar','modul-13') ?></div>
 	</div>
 </div>
 <?php
