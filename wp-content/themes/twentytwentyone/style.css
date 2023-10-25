@@ -6328,6 +6328,28 @@ li {
 }
 
 /* -- /Module 10 -- */
+/*--Module 12--*/
+
+.wp-block-group__inner-container >h2{
+	display: grid !important;
+}
+.comment-12 .wp-block-group__inner-container >h2::after{
+	content: "";
+	border: 2px solid#d9d9d9ee;
+	width: 26%;
+}
+.wp-block-latest-comments .wp-block-latest-comments__comment-excerpt p {
+	font-weight: 600;
+	color: #4b8cd0;
+}
+.has-avatars .wp-block-latest-comments__comment .wp-block-latest-comments__comment-excerpt{
+	margin-left: 1.25em;
+}
+#sidebar-left .widget .wp-block-group .wp-block-group__inner-container h2.wp-block-heading {
+	color: #576895;
+}
+
+/*--Module 12--*/
 
 /* --- Module 13 --- */
 .content-nav {
