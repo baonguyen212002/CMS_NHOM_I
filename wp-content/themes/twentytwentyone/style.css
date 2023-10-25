@@ -698,7 +698,7 @@ template {
 .default-max-width {
 	max-width: var(--responsive--aligndefault-width);
 	margin-left: auto;
-	/* margin-right: auto; */
+	margin-right: auto;
 }
 
 .widget-area,
@@ -6232,6 +6232,7 @@ ul.category-list {
 	padding-bottom: 30px;
 	padding-top: 25px;
 	padding-right: 10px;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
 }
 
 ul.category-list li a{
@@ -6664,4 +6665,8 @@ ul.timeline > li:before {
     width: 20px;
     height: 20px;
     z-index: 400;
+}
+/* fix-content-single */
+.entry-single > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator){
+	max-width: none !important;
 }
