@@ -22,90 +22,20 @@ get_header(); ?>
 		<h1 class="page-title"><?php single_post_title(); ?></h1>
 	</header><!-- .page-header -->
 <?php endif; ?>
-<div class="container">
+<div class="conten-list-post">
 	<div class="row">
-	<div class="col-md-3">
-		<!-- .Archive -->
+		<div class="col-md-3">
 
-<div class="box-category box-xemnhieu">
-                    <hgroup class="width_common title-box-category">
-                        <h3 class="parent-cate active">Xem nhiều</a></h3>
-                    </hgroup>
-					<div class="width_common list-top-view">
-<div id="dv1">
-<article class="item-news">
-	<h2><span class="sidebar-ben-trai">1</span></h2>
-	<h3 class="title-news"><a href="http://localhost:8080/wordpress/2023/10/21/audi-q7-2021/" data-itm-source="#vn_source=Home&amp;vn_campaign=Box-XemNhieuNhat&amp;vn_medium=TitleBoxXemNhieuNhat&amp;vn_term=Desktop" title="Audi Q7 2021" data-itm-added="1">Audi Q7 2021</a>
-	<span class="meta-news">
-<a class="count_cmt" href="http://localhost:8080/wordpress/2023/10/21/audi-q7-2021/" style="white-space: nowrap;display: none;">
-</a>
-	</span>
-	</h3>
-</article>
-</div>
-<div id="dv2">
-<article class="item-news">
-<h2><span class="sidebar-ben-trai">2</span></h2>
-	<h3 class="title-news"><a href="http://localhost:8080/wordpress/2023/10/20/kane-lap-cu-dup-giup-anh-ha-italy/" data-itm-source="#vn_source=Home&amp;vn_campaign=Box-XemNhieuNhat&amp;vn_medium=TitleBoxXemNhieuNhat&amp;vn_term=Desktop"title="Kane lập cú đúp, giúp Anh hạ Italy" data-itm-added="1">Kane lập cú đúp, giúp Anh hạ Italy</a>
-	<span class="meta-news">
-<a class="count_cmt" href="http://localhost:8080/wordpress/2023/10/20/kane-lap-cu-dup-giup-anh-ha-italy/" style="white-space: nowrap; display: inline-block;">
-</a>
-	</span>
-	</h3>
-</article>
-</div>
-<div id="dv3">
-<article class="item-news">
-<h2><span class="sidebar-ben-trai">3</span></h2>
-	<h3 class="title-news"><a href="http://localhost:8080/wordpress/2023/10/20/messi-lap-cu-dup-argentina-xay-cao-dinh-bang/" data-itm-source="#vn_source=Home&amp;vn_campaign=Box-XemNhieuNhat&amp;vn_medium=TitleBoxXemNhieuNhat&amp;vn_term=Desktop" title="Messi lập cú đúp, Argentina xây cao đỉnh bảng" data-itm-added="1">Messi lập cú đúp, Argentina xây cao đỉnh bảng</a>
-	<span class="meta-news">
-
-<a class="count_cmt" href="http://localhost:8080/wordpress/2023/10/20/messi-lap-cu-dup-argentina-xay-cao-dinh-bang/" style="white-space: nowrap; display: inline-block;">
-</a>
-</span>
-	</h3>
-</article>
-</div>
-<div id="dv4">
-<article class="item-news">
-<h2><span class="sidebar-ben-trai">4</span></h2>
-	<h3 class="title-news"><a href="http://localhost:8080/wordpress/2023/10/20/berbatov-ronaldo-chi-dung-lai-khi-cau-ay-muon/"  data-itm-source="#vn_source=Home&amp;vn_campaign=Box-XemNhieuNhat&amp;vn_medium=TitleBoxXemNhieuNhat&amp;vn_term=Desktop"title="Berbatov: ‘Ronaldo chỉ dừng lại khi cậu ấy muốn’'" data-itm-added="1">Berbatov: ‘Ronaldo chỉ dừng lại khi cậu ấy muốn’ 'nhà đầu tư chủ quan'</a>
-	<span class="meta-news">
-
-<a class="count_cmt" href="http://localhost:8080/wordpress/2023/10/20/berbatov-ronaldo-chi-dung-lai-khi-cau-ay-muon/" style="white-space: nowrap; display: inline-block;">
-</a>
-	</span>
-	</h3>
-</article>
-</div>
-<div id="dv5">
-<article class="item-news">
-<h2><span class="sidebar-ben-trai">5</span></h2>
-	<h3 class="title-news"><a href="http://localhost:8080/wordpress/2023/10/18/hello-world/"  data-itm-source="#vn_source=Home&amp;vn_campaign=Box-XemNhieuNhat&amp;vn_medium=TitleBoxXemNhieuNhat&amp;vn_term=Desktop"title="Berbatov: ‘Neymar chấn thương trong trận thua của Brazil’'" data-itm-added="1">Berbatov: ‘Neymar chấn thương trong trận thua của Brazil'</a>
-	<span class="meta-news">
-
-<a class="count_cmt" href="http://localhost:8080/wordpress/2023/10/18/hello-world/" style="white-space: nowrap; display: inline-block;">
-</a>
-	</span>
-	</h3>
-</article>
-</div>
-
-                    </div>
-
-				</div>
-	</div>
+		</div>
 		<div class="col-md-6">
-		<?php
+			<?php
 			if ( have_posts() ) {
-
 				// Load posts loop.
 				while ( have_posts() ) {
 					the_post();
 
 					get_template_part( 'template-parts/content/content', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) );
 				}
-
 				// Previous/next page navigation.
 				twenty_twenty_one_the_posts_navigation();
 
@@ -113,47 +43,33 @@ get_header(); ?>
 
 				// If no content, include the "No posts found" template.
 				get_template_part( 'template-parts/content/content-none' );
-
-			}
-		?>
-
+			}?>
 		</div>
-
-		<div class="col-md-3">
-			<div class="container">
-				<p>Comment</p>
-				<hr class="border-bottom-hr">
-				<div class="content-comment">
-					<ul class="wp-block-latest-posts__list wp-block-latest-posts">
-						<?php
-							// if(isset($_SESSION['list-posts-title']))
-							// echo $_SESSION['list-posts-title'];
-							$args = array(
-								'numberposts' => 5, // Số lượng bài viết bạn muốn lấy
-								'post_status' => 'publish', // Chỉ lấy các bài viết đã được xuất bản
-							);
-							
-							$recent_posts = get_posts($args);
-							
-							if ($recent_posts) {
-								foreach ($recent_posts as $post) {
-									setup_postdata($post);
-									echo '<li class="type-12"><a href="' . get_permalink() . '">' . get_the_title() . '</a></li><br>';
-								}
-								wp_reset_postdata(); // Đặt lại dữ liệu bài viết
-							} else {
-								echo 'Không tìm thấy bài viết gần đây.';
-							}
-						?>
-					</ul>
-				</div>
-				
+		<div class="col-md-3 recent_comments">
+				<p class = "comment">Comment</p>
+				<?php
+				$args = array(
+					'number'     =>3,
+					'status'     =>'approve',
+					'order'      =>'DESC',
+					'orderby'    =>'comment_date',
+				);
+				$latest_comments = get_comments($args);
+				if ($latest_comments) {
+					foreach ($latest_comments as $comment) {
+						$comment_post_id = $comment->comment_post_ID;
+						$comment_post_url = get_permalink($comment_post_id);
+						echo '<div class="comment">';
+						echo '<p class="comment-content"><a href="' . $comment_post_url . '">' . $comment->comment_content . '</a></p>';
+						echo '</div>';
+					}
+				}else {
+					echo 'khong co comment nao';
+				}
+				?>
 			</div>
 		</div>
-
 	</div>
 </div>
 <?php
-
 get_footer();
-?>
