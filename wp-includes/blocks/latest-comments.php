@@ -71,20 +71,20 @@ function render_block_core_latest_comments( $attributes = array() ) {
 		
 
 			$author_markup = '';
-			if ( $author_url ) {
+			if ( $author_url) {
 				$author_markup ;
 			 } else {
 				$author_markup .= '<span class="wp-block-latest-comments__comment-author">' . get_comment_author( $comment ) . '</span>';
 			}
 
-			// `_draft_or_post_title` calls `esc_html()` so we don't need to wrap that call in
+			// `_draft_or_post_title` calls `esc_html()` so we don't need to wrap t	hat call in
 			// `esc_html`.
 
 			// $post_title = '<a class="wp-block-latest-comments__comment-link" href="' . esc_url( get_comment_link( $comment ) ) . '">' . wp_latest_comments_draft_or_post_title( $comment->comment_post_ID ) . '</a>';
 
 			$list_items_markup .= sprintf(
 				/* translators: 1: author name (inside <a> or <span> tag, based on if they have a URL), 2: post title related to this comment */
-				__( '%1$s' ),
+				__('%1$s' ),
 				$author_markup,
 		
 			);
@@ -100,7 +100,7 @@ function render_block_core_latest_comments( $attributes = array() ) {
 			if ( $attributes['displayExcerpt'] ) {
 				$list_items_markup .= '<div class="wp-block-latest-comments__comment-excerpt">' . wpautop( get_comment_excerpt( $comment ) ) . '</div>';
 			}
-			$list_items_markup .= '</article></li>';
+		
 		}
 	}
 
