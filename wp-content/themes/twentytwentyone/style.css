@@ -6107,8 +6107,11 @@ background-color:  #28a745 !important; /* Đổi màu chữ thành đỏ khi rê
 }
 .search-field{
 	margin: 0px !important;
-	border: 1px  solid #DFDFDF !important;
+	/* border: 1px  solid #DFDFDF !important; */
 	border-radius: 10px !important;
+}
+.page-description {
+	color: #000 !important;
 }
 .fas {
     font-weight: 600;
@@ -6549,9 +6552,20 @@ li {
 	position: relative;
 }
 
+
 .comment::after {
 	position: relative;
 	
+
+.content-nav a {
+	color: #000 !important;
+}
+
+.post-title-nav {
+	text-align: left;
+	font-size: 22px;
+	margin: 0 !important;
+
 }
 
 .comment::before {
@@ -6627,7 +6641,7 @@ li {
 	box-sizing: border-box;
 }
 .body-14 {
-	max-width: 400px !important;
+	max-width: 300px !important;
 }
 .comment-box .media-heading {
     background-color: #f5f5f5;
