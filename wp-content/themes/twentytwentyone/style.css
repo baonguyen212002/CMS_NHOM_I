@@ -6543,29 +6543,30 @@ li {
     color:white;
 }
 
+.xemnhieu::before{
+	position: absolute;
+	content: "";
+	top: 28px;
+	opacity: 0.3;
+	width: 95px;
+	border-bottom: 2px solid #9f224e;
+}
+.xemnhieu{
+	color: #000;
+}
+
 
 
 /* -- /Module 11 -- */
 /*--Module 12--*/
 
+
 .recent_comments {
 	position: relative;
 }
 
-
 .comment::after {
 	position: relative;
-	
-
-.content-nav a {
-	color: #000 !important;
-}
-
-.post-title-nav {
-	text-align: left;
-	font-size: 22px;
-	margin: 0 !important;
-
 }
 
 .comment::before {
@@ -6582,7 +6583,7 @@ li {
 	color: #428bca;
 	font-weight: 500;
 	font-size: 90%;
-	
+	padding: 4px 10px;
 }
 
 .comment-content::after {
@@ -6593,8 +6594,9 @@ li {
 	width: 200px;
 	border-bottom: 1px solid #000;
 	color: #428bca;
-	
 }
+
+
 /* --- /Module 12 --- */
 
 

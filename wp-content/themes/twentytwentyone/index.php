@@ -27,9 +27,7 @@ get_header(); ?>
 		<div class="col-md-3">
 		<div class="box-category box-xemnhieu">
                     <hgroup class="width_common title-box-category">
-                        <h2 class="parent-cate active"><a data-itm-source="#vn_source=Home&amp;vn_campaign=Box-XemNhieuNhat&amp;vn_medium=TitleBoxXemNhieuNhat&amp;vn_term=Desktop" title="Xem nhiều" href="/tin-xem-nhieu" class="inner-title" data-itm-added="1">Xem nhiều</a></h2>
-                    </hgroup>
-
+					<h5 class="xemnhieu">Xem nhiều</h5>
                     <div class="width_common list-top-view">
                             <?php 
                             $post_link = get_permalink(); 
@@ -47,7 +45,6 @@ get_header(); ?>
                             <h3 class="title-news"><a href="<?php echo $post_link  ?>" data-itm-source="#vn_source=Home&amp;vn_campaign=Box-XemNhieuNhat&amp;vn_medium=Item-1&amp;vn_term=Desktop&amp;vn_thumb=0" title="Hiện trạng gần 150 căn nhà sai phép bị tháo dỡ ở TP HCM" data-itm-added="1"><?php the_title(); ?> </a>
                             <span class="meta-news">
                           
-                            
                             <a class="count_cmt" href="<?php echo $post_link  ?>" style="white-space: nowrap; display: inline-block;">
                                 <svg class="ic ic-comment"><use xlink:href="#Comment-Reg"></use></svg>
                             
@@ -60,7 +57,7 @@ get_header(); ?>
                         <?php endwhile;?>
                     <?php endif; ?>
         
-                    </div>  
+                    </div>  	
                    
                 </div>
 		</div>
@@ -83,7 +80,7 @@ get_header(); ?>
 			}?>
 		</div>
 		<div class="col-md-3 recent_comments">
-				<p class = "comment">Comment</p>
+				<p class = "comment">Comments</p>
 				<?php
 				$args = array(
 					'number'     =>3,
