@@ -22,10 +22,47 @@ get_header(); ?>
 		<h1 class="page-title"><?php single_post_title(); ?></h1>
 	</header><!-- .page-header -->
 <?php endif; ?>
-<div class="conten-list-post">
+<div class="container">
 	<div class="row">
 		<div class="col-md-3">
+		<div class="box-category box-xemnhieu">
+                    <hgroup class="width_common title-box-category">
+                        <h2 class="parent-cate active"><a data-itm-source="#vn_source=Home&amp;vn_campaign=Box-XemNhieuNhat&amp;vn_medium=TitleBoxXemNhieuNhat&amp;vn_term=Desktop" title="Xem nhiều" href="/tin-xem-nhieu" class="inner-title" data-itm-added="1">Xem nhiều</a></h2>
+                    </hgroup>
 
+                    <div class="width_common list-top-view">
+                            <?php 
+                            $post_link = get_permalink(); 
+                            
+                            $temp = 0 ; ?>                          
+                        <?php if (have_posts()) : ?>
+                            <?php while (have_posts()) : the_post(); ?>
+                 
+                    <?php $temp  = $temp + 1;
+                       $post_link = get_permalink(); 
+                    ?>
+
+                        <article class="item-news">
+                            <span class="number-top-view"><?php echo $temp ?></span>
+                            <h3 class="title-news"><a href="<?php echo $post_link  ?>" data-itm-source="#vn_source=Home&amp;vn_campaign=Box-XemNhieuNhat&amp;vn_medium=Item-1&amp;vn_term=Desktop&amp;vn_thumb=0" title="Hiện trạng gần 150 căn nhà sai phép bị tháo dỡ ở TP HCM" data-itm-added="1"><?php the_title(); ?> </a>
+                            <span class="meta-news">
+                          
+                            
+                            <a class="count_cmt" href="<?php echo $post_link  ?>" style="white-space: nowrap; display: inline-block;">
+                                <svg class="ic ic-comment"><use xlink:href="#Comment-Reg"></use></svg>
+                            
+                            </a>
+                            
+                                    </span>
+                             </h3>
+                        </article>
+
+                        <?php endwhile;?>
+                    <?php endif; ?>
+        
+                    </div>  
+                   
+                </div>
 		</div>
 		<div class="col-md-6">
 			<?php
@@ -56,11 +93,11 @@ get_header(); ?>
 				);
 				$latest_comments = get_comments($args);
 				if ($latest_comments) {
-					foreach ($latest_comments as $comment) {
+					foreach ($latest_comments as $comment ) {
 						$comment_post_id = $comment->comment_post_ID;
 						$comment_post_url = get_permalink($comment_post_id);
 						echo '<div class="comment">';
-						echo '<p class="comment-content"><a href="' . $comment_post_url . '">' . $comment->comment_content . '</a></p>';
+						echo'<p class="comment-content"><a href="' . $comment_post_url  . '">' . $comment->comment_content . '</a></p>';
 						echo '</div>';
 					}
 				}else {
